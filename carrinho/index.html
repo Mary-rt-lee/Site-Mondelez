@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mondelez - Carrinho</title>
+</head>
+<body>
+    <!--Menu-->
+    <header>
+        <div id="logo">
+            <img src="logomondelez-header.jpg.jpeg" alt="logo mondelez">
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <section>
+                        <form>
+                            <label for="Busque aqui seu produto">Busque aqui seu produto:</label>
+                            <input type="text" id="Busque aqui seu produto" name="Busque aqui seu produto">
+                        </form>
+                    </section>
+                    <a href="Home">Home</a>
+                    <a href="Loja">Loja</a>
+                    <a href="Carrinho">Carrinho</a>
+                    <a href="Sobre nós">Sobre nós</a>
+                    <a href="Suporte">Suporte</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrinho de Compras -->
+    <section>
+        <h2>Carrinho de compras</h2>
+        <div>
+            <img src="caixa.webp" alt="imagem caixa"></a>
+            <p><strong>Lacta chocolate bombom caixa favoritos - 250 G.</strong></p>
+            <p>R$ <span class="preco" data-preco="18.36">18,36</span></p>
+            <button onclick="decrementar('quantidade1')">-</button> 
+            <input type="number" id="quantidade1" value="1" min="1" onchange="atualizarResumo()"> 
+            <button onclick="incrementar('quantidade1')">+</button>
+            <button>Excluir</button> <button>Salvar</button>
+        </div>
+        <div>
+            <img src="sonhodevalsa.webp" alt="imagem sonhodevalsa"></a>
+            <p><strong>Chocolate Stick Sonho De Valsa Caixa C/15unx25g</strong></p>
+            <p>R$ <span class="preco" data-preco="49.99">49,99</span></p>
+            <button onclick="decrementar('quantidade2')">-</button> 
+            <input type="number" id="quantidade2" value="1" min="1" onchange="atualizarResumo()"> 
+            <button onclick="incrementar('quantidade2')">+</button>
+            <button>Excluir</button> <button>Salvar</button>
+        </div>
+    </section>
+
+    <!-- Resumo da compra -->
+    <section>
+        <h2>Resumo da compra</h2>
+        <p>Produtos (<span id="totalItens">2</span>): R$ <span id="totalPreco">68,35</span></p>
+        <p>Frete: R$ 0,00</p>
+        <p><strong>Total: R$ <span id="totalFinal">68,35</span></strong></p>
+        <button>Finalizar compra</button>
+    </section>
+
+    <section>
+        <a href="https://pt-br.facebook.com/mondelezinternational/photos"><img src="facebook.jpeg" alt="imagem Facebook"></a> 
+        <a href="https://www.instagram.com/mondelez_international/"><img src="instagram.jpeg" alt="imagem Instagram"></a> 
+        <a href="https://br.linkedin.com/company/mondelezinternational"><img src="linkedin.jpeg" alt="imagem Linkedin"></a> 
+        <a href="https://x.com/mdlz?lang=bn"><img src="twitter.jpeg" alt="imagem X"></a> 
+    <!-- Rodapé -->
+    <footer>
+        <h3>Contato e Suporte</h3>
+
+        <h3>Formulário de Contato</h3>
+        <ul>
+            <li>Telefone de Suporte</li>
+            <li>E-mail e Atendimento</li>
+        </ul>
+        
+        <h3>Suporte ao Consumidor</h3>
+        <ul>
+            <li>Dúvidas</li>
+            <li>Sugestões</li>
+        </ul>
+
+    </footer>
+
+    <script>
+        function incrementar(id) {
+            let input = document.getElementById(id);
+            input.value = parseInt(input.value) + 1;
+            atualizarResumo();
+        }
+
+        function decrementar(id) {
+            let input = document.getElementById(id);
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+                atualizarResumo();
+            }
+        }
+
+        function atualizarResumo() {
+            let totalItens = 0;
+            let totalPreco = 0;
+            
+            document.querySelectorAll("input[type='number']").forEach((input, index) => {
+                let quantidade = parseInt(input.value);
+                let preco = parseFloat(document.querySelectorAll(".preco")[index].dataset.preco);
+                totalItens += quantidade;
+                totalPreco += quantidade * preco;
+            });
+            
+            document.getElementById("totalItens").textContent = totalItens;
+            document.getElementById("totalPreco").textContent = totalPreco.toFixed(2);
+            document.getElementById("totalFinal").textContent = totalPreco.toFixed(2);
+        }
+    </script>
+</body>
+</html>
