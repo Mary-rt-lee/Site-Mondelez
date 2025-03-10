@@ -4,58 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Mondelez</title>
+    <link rel="stylesheet" href="style_faleconosco.css">
 </head>
 <body>
-    <!--Menu-->
+    <!-- Menu -->
     <header>
         <div id="logo">
-            <img src="checkout_gp1/img/logo_mondelez.jpeg" alt="logo mondelez">
+            <img src="checkout_gp1/img/logo_mondelez.jpeg" alt="Logo Mondelez">
         </div>
         <nav>
+            <form>
+                <label for="busca">Busque aqui seu produto:</label>
+                <input type="text" id="busca" name="busca">
+            </form>
             <ul>
-                <li>
-                    <section>
-                        <form>
-                            <label for="Busque aqui seu produto">Busque aqui seu produto:</label>
-                            <input type="text" id="Busque aqui seu produto" name="Busque aqui seu produto">
-                        </form>
-                    </section>
-                    <a href="Loja">Loja</a>
-                    <a href="Carrinho">Carrinho</a>
-                    <a href="Sobre nós">Sobre nós</a>
-                    <a href="Suporte">Suporte</a>
-                </li>
+                <li><a href="Loja">Loja</a></li>
+                <li><a href="Carrinho">Carrinho</a></li>
+                <li><a href="Sobre nós">Sobre nós</a></li>
+                <li><a href="Suporte">Suporte</a></li>
             </ul>
         </nav>
     </header>
 
-    <!--Banner-->
+    <!-- Banner -->
     <section>
         <div id="banner">
-            <img src="checkout_gp1/img/banner_lacta.png" alt="Banner">
+            <img src="checkout_gp1/img/banner_lacta.png" alt="Banner Lacta">
         </div>
     </section>
 
-    <!--Formulário de Contato-->
+    <!-- Formulário de Contato -->
     <section>
         <h3>Precisamos ouvir você! Como podemos ajudar?</h3>
         <p>Entre em contato com nossa equipe de suporte para dúvidas, sugestões ou informações sobre nossos produtos.</p>
 
         <form>
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome">
+            <input type="text" id="nome" name="nome" required>
 
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
 
-            <label for="nome">Assunto</label>
-            <input type="text" id="assunto" name="assunto">
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" required>
 
-            <label for="nome">Mensagem</label>
-            <textarea name="mensagem" id="mensagem"></textarea>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
 
             <button type="submit">Enviar</button>
-
         </form>
 
         <div>
@@ -65,6 +61,7 @@
         </div>
     </section>
 
+    <!-- Perguntas Frequentes (FAQ) -->
     <section>
         <h3>Perguntas Frequentes (FAQ)</h3>
         <ul>
@@ -76,41 +73,38 @@
         </ul>
         
         <p>Siga-nos:</p>
+        <div>
             <a href="https://www.facebook.com" target="_blank">
                 <img src="checkout_gp1/img/facebook_icon.jpeg" alt="Facebook">
             </a>
-
             <a href="https://www.instagram.com" target="_blank">
                 <img src="checkout_gp1/img/instagram_icon.jpeg" alt="Instagram">
             </a>
-
             <a href="https://www.linkedin.com" target="_blank">
                 <img src="checkout_gp1/img/linkedin_icon.jpeg" alt="LinkedIn">
             </a>
-
             <a href="https://twitter.com" target="_blank">
                 <img src="checkout_gp1/img/x_icon.jpeg" alt="X">
             </a>
-
+        </div>
     </section>
 
     <!-- Rodapé -->
-<!-- Rodapé -->
     <footer>
-        <h3>Contato e Suporte</h3>
-
-        <h3>Formulário de Contato</h3>
-        <ul>
-            <li>Telefone de Suporte</li>
-            <li>E-mail e Atendimento</li>
-        </ul>
-        
-        <h3>Suporte ao Consumidor</h3>
-        <ul>
-            <li>Dúvidas</li>
-            <li>Sugestões</li>
-        </ul>
-
+        <div>
+            <h3>Contato e Suporte</h3>
+            <ul>
+                <li>Telefone de Suporte: (XX) XXXX-XXXX</li>
+                <li>E-mail: suporte@mondelez.com.br</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Suporte ao Consumidor</h3>
+            <ul>
+                <li><a href="#duvidas">Dúvidas</a></li>
+                <li><a href="#sugestoes">Sugestões</a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>
