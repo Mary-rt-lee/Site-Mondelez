@@ -1,6 +1,143 @@
-*{
-    margin: 3;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
-body{
-    height: 100%;
+
+body {
+  background-color: #ede9e9;
+  color: #333;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #6049a6;
+  color: white;
+}
+
+form{
+  font-size: 40px;
+}
+
+.logo img {
+  height: 200px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Banner */
+.oreo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4276px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.chocolatecauda{
+  display: flex;
+  width: 4276px;
+  height: 1368px;
+  opacity: 0.3;
+ }
+
+/* Texto Sobre Nós */
+.texto {
+  max-width: 4000px;
+  padding: 200px;
+  margin-top: -1000px;
+  display: flex;
+}
+
+.texto h1, .texto h2 {
+  color: #6049a6;
+  margin-bottom: 15px;
+  font-size: 80px;
+}
+
+.texto p {
+  display: flex;
+  font-size: 60px;
+  line-height: 1.6;
+}
+
+/* Imagens da página */
+
+.imagens{
+display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+}
+
+ .mascotemdlz {
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: -200px;
+}
+
+/* Redes Sociais */
+.redesocial {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 50px 0;
+}
+
+.redesocial img {
+  width: 50px;
+  transition: 0.3s;
+}
+
+.redesocial img:hover {
+  transform: scale(1.1);
+}
+
+/* Rodapé */
+.rodape {
+  background-color: #6049a6;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.rodape h3 {
+  margin-bottom: 15px;
+}
+
+.rodape ul {
+  list-style: none;
+  font-size: 18px;
+}
+
+.rodape ul li {
+  margin: 8px 0;
 }
