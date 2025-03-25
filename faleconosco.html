@@ -3,105 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Mondelez</title>
-    <meta name="description" content="Entre em contato com a Mondelez para suporte, dúvidas ou sugestões.">
+    <title>Contato - Mondelez | Suporte ao Cliente e FAQ</title>
+    <meta name="description" content="Entre em contato com a Mondelez para suporte, dúvidas ou sugestões. Encontre respostas para perguntas frequentes sobre nossos produtos.">
+    <meta name="keywords" content="Mondelez, contato, suporte, FAQ, produtos, chocolate, biscoito">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style_faleconosco.css" as="style">
+    <link rel="preload" href="https://unpkg.com/swiper/swiper-bundle.min.css" as="style">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style_faleconosco.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <!-- Favicon (should be added) -->
+    <link rel="icon" href="checkout_gp1/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+    
     <!-- Cabeçalho -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="logo">
-            <img src="checkout_gp1/img/logo_mondelez.jpeg" alt="Logo Mondelez" width="150" height="50">
+            <a href="index.html" aria-label="Página inicial da Mondelez">
+                <img src="checkout_gp1/img/logo_mondelez.jpeg" alt="Logo Mondelez" width="150" height="50" loading="lazy">
+            </a>
         </div>
-        <nav class="nav">
-            <form class="search-form" aria-label="Busca de produtos">
-                <label for="busca-produto">Busque aqui seu produto:</label>
-                <input type="text" id="busca-produto" name="busca-produto" placeholder="Digite o nome do produto">
+        
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="sr-only">Menu</span>
+            ☰
+        </button>
+        
+        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+            <form class="search-form" aria-label="Busca de produtos" role="search">
+                <label for="busca-produto" class="sr-only">Busque aqui seu produto:</label>
+                <input type="text" id="busca-produto" name="busca-produto" placeholder="Digite o nome do produto" aria-label="Campo de busca de produtos">
+                <button type="submit" aria-label="Buscar">🔍</button>
             </form>
+            
             <ul class="nav-list">
                 <li><a href="loja.html" class="nav-link">Loja</a></li>
-                <li><a href="carrinho/index.html" class="nav-link">Carrinho</a></li>
+                <li><a href="carrinho/index.html" class="nav-link">Carrinho <span class="cart-count" aria-live="polite">0</span></a></li>
                 <li><a href="sobre-nos.html" class="nav-link">Sobre Nós</a></li>
-                <li><a href="faleconosco.html" class="nav-link">Suporte</a></li>
+                <li><a href="faleconosco.html" class="nav-link" aria-current="page">Suporte</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Banner Carrossel -->
-    <section class="carrossel" aria-label="Carrossel de banners">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="checkout_gp1/img/banner_lacta.png" alt="Banner Lacta" loading="lazy">
+    <main id="main-content" role="main">
+        <!-- Banner Carrossel -->
+        <section class="carrossel" aria-label="Carrossel de banners">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="checkout_gp1/img/banner_lacta.png" alt="Promoção de produtos Lacta" loading="lazy" width="1200" height="400">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="checkout_gp1/img/download.jpg" alt="Nossos produtos mais populares" loading="lazy" width="1200" height="400">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="checkout_gp1/img/product_lacta_picole_big_05.png" alt="Novo picolé Lacta" loading="lazy" width="1200" height="400">
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="checkout_gp1/img/download.jpg" alt="Banner 2" loading="lazy">
-                </div>
-                <div class="swiper-slide">
-                    <img src="checkout_gp1/img/product_lacta_picole_big_05.png" alt="Banner 3" loading="lazy">
+                <button class="swiper-button-next" aria-label="Próximo slide"></button>
+                <button class="swiper-button-prev" aria-label="Slide anterior"></button>
+                <div class="swiper-pagination" role="navigation" aria-label="Navegação do carrossel"></div>
+            </div>
+        </section>
+
+        <!-- Formulário de Contato -->
+        <section class="contato" aria-labelledby="contato-heading">
+            <div class="container">
+                <h1 id="contato-heading">Precisamos ouvir você! Como podemos ajudar?</h1>
+                <div class="contato-container">
+                    <div class="formulario">
+                        <p>Entre em contato com nossa equipe de suporte para dúvidas, sugestões ou informações sobre nossos produtos. Responderemos em até 48 horas úteis.</p>
+                        <form class="contact-form" aria-label="Formulário de contato" id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="nome" class="form-label">Nome completo <span class="required">*</span></label>
+                                <input type="text" id="nome" name="nome" required aria-required="true" minlength="3">
+                                <span class="error-message" aria-live="polite"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                                <span class="error-message" aria-live="polite"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="assunto" class="form-label">Assunto</label>
+                                <select id="assunto" name="assunto">
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="duvida">Dúvida sobre produtos</option>
+                                    <option value="sugestao">Sugestão</option>
+                                    <option value="reclamacao">Reclamação</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mensagem" class="form-label">Mensagem <span class="required">*</span></label>
+                                <textarea id="mensagem" name="mensagem" required aria-required="true" minlength="10"></textarea>
+                                <span class="error-message" aria-live="polite"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="checkbox" id="consentimento" name="consentimento" required aria-required="true">
+                                <label for="consentimento">Concordo com a política de privacidade e tratamento de dados</label>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit">Enviar mensagem</button>
+                        </form>
+                    </div>
+                    
+                    <div class="suporte">
+                        <div class="suporte-card">
+                            <img src="checkout_gp1/img/atendente.jpeg" alt="Atendente de suporte sorrindo" loading="lazy" width="400" height="300">
+                            <div class="suporte-info">
+                                <h3>Fale conosco</h3>
+                                <p><strong>E-mail de Suporte:</strong> <a href="mailto:suporte@mondelez.com.br">suporte@mondelez.com.br</a></p>
+                                <p><strong>Telefone:</strong> <a href="tel:08007041940">0800 704 1940</a></p>
+                                <p><strong>Horário de atendimento:</strong> Segunda a sexta, das 8h às 18h</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="swiper-button-next" aria-label="Próximo slide"></div>
-            <div class="swiper-button-prev" aria-label="Slide anterior"></div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Formulário de Contato -->
-<section class="contato" aria-labelledby="contato-heading">
-    <h2 id="contato-heading">Precisamos ouvir você! Como podemos ajudar?</h2>
-    <div class="contato-container">
-        <div class="formulario">
-            <p>Entre em contato com nossa equipe de suporte para dúvidas, sugestões ou informações sobre nossos produtos.</p>
-            <form class="contact-form" aria-label="Formulário de contato">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" id="nome" name="nome" required>
-
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="assunto" class="form-label">Assunto</label>
-                <input type="text" id="assunto" name="assunto">
-
-                <label for="mensagem" class="form-label">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
-
-                <button type="submit" class="btn-submit">Enviar</button>
-            </form>
-        </div>
-        <div class="suporte">
-            <img src="checkout_gp1/img/atendente.jpeg" alt="Atendente de suporte" loading="lazy">
-            <p><strong>E-mail de Suporte:</strong> <a href="mailto:suporte@mondelez.com.br">suporte@mondelez.com.br</a></p>
-        </div>
-    </div>
-</section>
-
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Perguntas Frequentes (FAQ)</h2>
-        <ul class="faq-list">
-            <li>Onde posso encontrar os produtos Mondelez?</li>
-            <li>Os produtos contêm ingredientes alergênicos?</li>
-            <li>Como posso participar de promoções?</li>
-            <li>Posso revender produtos Mondelez?</li>
-            <li>Como faço para trabalhar na Mondelez?</li>
-        </ul>
-    </section>
+        <!-- FAQ -->
+        <section class="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 id="faq-heading">Perguntas Frequentes (FAQ)</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-button" aria-expanded="false" aria-controls="faq1">
+                            Onde posso encontrar os produtos Mondelez?
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-content" id="faq1" hidden>
+                            <p>Nossos produtos estão disponíveis em supermercados, lojas de conveniência e mercados em todo o Brasil. Você também pode encontrar alguns de nossos produtos em nossa loja online.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-button" aria-expanded="false" aria-controls="faq2">
+                            Os produtos contêm ingredientes alergênicos?
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-content" id="faq2" hidden>
+                            <p>Todos os nossos produtos possuem informações detalhadas sobre ingredientes alergênicos em suas embalagens. Recomendamos sempre verificar a lista de ingredientes antes do consumo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-button" aria-expanded="false" aria-controls="faq3">
+                            Como posso participar de promoções?
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-content" id="faq3" hidden>
+                            <p>Nossas promoções são divulgadas em nosso site e redes sociais. Algumas promoções exigem cadastro prévio ou comprovação de compra.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-button" aria-expanded="false" aria-controls="faq4">
+                            Posso revender produtos Mondelez?
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-content" id="faq4" hidden>
+                            <p>Para se tornar um revendedor autorizado Mondelez, entre em contato com nosso departamento comercial através do e-mail comercial@mondelez.com.br.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-button" aria-expanded="false" aria-controls="faq5">
+                            Como faço para trabalhar na Mondelez?
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-content" id="faq5" hidden>
+                            <p>Todas as nossas vagas são divulgadas em nosso site oficial na seção "Trabalhe Conosco". Você também pode se cadastrar em nosso banco de talentos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Rodapé -->
-    <footer class="footer">
-        <div class="footer-content">
-            <h3>Contato e Suporte</h3>
-            <ul>
-                <li><strong>Telefone:</strong> <a href="tel:08007041940">0800-704-1940</a></li>
-                <li><strong>E-mail:</strong> <a href="mailto:suporte@mondelez.com.br">suporte@mondelez.com.br</a></li>
-            </ul>
-            <h3>Suporte ao Consumidor</h3>
-            <ul>
-                <li><a href="duvidas.html">Dúvidas</a></li>
-                <li><a href="sugestoes.html">Sugestões</a></li>
-            </ul>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Contato e Suporte</h3>
+                    <address>
+                        <p><strong>Telefone:</strong> <a href="tel:08007041940">0800-704-1940</a></p>
+                        <p><strong>E-mail:</strong> <a href="mailto:suporte@mondelez.com.br">suporte@mondelez.com.br</a></p>
+                    </address>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Suporte ao Consumidor</h3>
+                    <ul class="footer-links">
+                        <li><a href="duvidas.html">Dúvidas</a></li>
+                        <li><a href="sugestoes.html">Sugestões</a></li>
+                        <li><a href="reclamacoes.html">Reclamações</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Institucional</h3>
+                    <ul class="footer-links">
+                        <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                        <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+                        <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Siga-nos</h3>
+                    <ul class="social-links">
+                        <li><a href="https://facebook.com/mondelez" aria-label="Facebook"><span class="sr-only">Facebook</span> <i class="icon-facebook"></i></a></li>
+                        <li><a href="https://instagram.com/mondelez" aria-label="Instagram"><span class="sr-only">Instagram</span> <i class="icon-instagram"></i></a></li>
+                        <li><a href="https://linkedin.com/company/mondelez" aria-label="LinkedIn"><span class="sr-only">LinkedIn</span> <i class="icon-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> Mondelez International. Todos os direitos reservados.</p>
+                <ul class="legal-links">
+                    <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                    <li><a href="termos-uso.html">Termos de Uso</a></li>
+                    <li><a href="cookies.html">Política de Cookies</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
@@ -109,15 +247,127 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Swiper
             const swiper = new Swiper('.swiper-container', {
                 loop: true,
-                autoplay: { delay: 3000 },
-                pagination: { el: '.swiper-pagination', clickable: true },
+                autoplay: { 
+                    delay: 5000,
+                    disableOnInteraction: false
+                },
+                pagination: { 
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true
+                },
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
+                a11y: {
+                    prevSlideMessage: 'Slide anterior',
+                    nextSlideMessage: 'Próximo slide',
+                    paginationBulletMessage: 'Ir para slide {{index}}',
+                }
             });
+            
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.nav');
+            
+            menuToggle.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                nav.classList.toggle('active');
+            });
+            
+            // FAQ Accordion functionality
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    const content = document.getElementById(this.getAttribute('aria-controls'));
+                    
+                    // Toggle aria-expanded
+                    this.setAttribute('aria-expanded', !expanded);
+                    
+                    // Toggle content visibility
+                    content.hidden = expanded;
+                    
+                    // Update icon
+                    const icon = this.querySelector('.accordion-icon');
+                    icon.textContent = expanded ? '+' : '−';
+                });
+            });
+            
+            // Form validation
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    let isValid = true;
+                    
+                    // Validate name
+                    const nameInput = document.getElementById('nome');
+                    if (nameInput.value.length < 3) {
+                        showError(nameInput, 'Por favor, insira seu nome completo');
+                        isValid = false;
+                    } else {
+                        clearError(nameInput);
+                    }
+                    
+                    // Validate email
+                    const emailInput = document.getElementById('email');
+                    if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+                        showError(emailInput, 'Por favor, insira um e-mail válido');
+                        isValid = false;
+                    } else {
+                        clearError(emailInput);
+                    }
+                    
+                    // Validate message
+                    const messageInput = document.getElementById('mensagem');
+                    if (messageInput.value.length < 10) {
+                        showError(messageInput, 'Por favor, escreva uma mensagem mais detalhada');
+                        isValid = false;
+                    } else {
+                        clearError(messageInput);
+                    }
+                    
+                    // Validate consent checkbox
+                    const consentInput = document.getElementById('consentimento');
+                    if (!consentInput.checked) {
+                        showError(consentInput, 'Você deve concordar com a política de privacidade');
+                        isValid = false;
+                    } else {
+                        clearError(consentInput);
+                    }
+                    
+                    if (isValid) {
+                        // Form is valid, submit it (in a real scenario, you would send to server)
+                        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                        contactForm.reset();
+                    }
+                });
+                
+                function showError(input, message) {
+                    const formGroup = input.closest('.form-group');
+                    const errorElement = formGroup.querySelector('.error-message');
+                    errorElement.textContent = message;
+                    input.setAttribute('aria-invalid', 'true');
+                }
+                
+                function clearError(input) {
+                    const formGroup = input.closest('.form-group');
+                    const errorElement = formGroup.querySelector('.error-message');
+                    errorElement.textContent = '';
+                    input.removeAttribute('aria-invalid');
+                }
+            }
+            
+            // Update current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
         });
     </script>
 </body>
