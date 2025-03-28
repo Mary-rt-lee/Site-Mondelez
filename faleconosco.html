@@ -10,13 +10,30 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="style_faleconosco.css" as="style">
     <link rel="preload" href="https://unpkg.com/swiper/swiper-bundle.min.css" as="style">
+    <link rel="preload" href="https://unpkg.com/swiper/swiper-bundle.min.js" as="script">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://unpkg.com">
     
     <!-- CSS -->
     <link rel="stylesheet" href="style_faleconosco.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     
-    <!-- Favicon (should be added) -->
+    <!-- Favicon -->
     <link rel="icon" href="checkout_gp1/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.mondelez.com.br/faleconosco">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Contato - Mondelez | Suporte ao Cliente e FAQ">
+    <meta property="og:description" content="Entre em contato com a Mondelez para suporte, dúvidas ou sugestões sobre nossos produtos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mondelez.com.br/faleconosco">
+    <meta property="og:image" content="https://www.mondelez.com.br/checkout_gp1/img/logo_mondelez.jpeg">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#e31837">
 </head>
 <body>
     <!-- Skip to content link for accessibility -->
@@ -24,31 +41,39 @@
     
     <!-- Cabeçalho -->
     <header class="header" role="banner">
-        <div class="logo">
-            <a href="index.html" aria-label="Página inicial da Mondelez">
-                <img src="checkout_gp1/img/logo_mondelez.jpeg" alt="Logo Mondelez" width="150" height="50" loading="lazy">
-            </a>
-        </div>
-        
-        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
-            <span class="sr-only">Menu</span>
-            ☰
-        </button>
-        
-        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
-            <form class="search-form" aria-label="Busca de produtos" role="search">
-                <label for="busca-produto" class="sr-only">Busque aqui seu produto:</label>
-                <input type="text" id="busca-produto" name="busca-produto" placeholder="Digite o nome do produto" aria-label="Campo de busca de produtos">
-                <button type="submit" aria-label="Buscar">🔍</button>
-            </form>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Página inicial da Mondelez">
+                    <img src="checkout_gp1/img/logo_mondelez.jpeg" alt="Logo Mondelez" width="150" height="50" loading="eager">
+                </a>
+            </div>
             
-            <ul class="nav-list">
-                <li><a href="loja.html" class="nav-link">Loja</a></li>
-                <li><a href="carrinho/index.html" class="nav-link">Carrinho <span class="cart-count" aria-live="polite">0</span></a></li>
-                <li><a href="sobre-nos.html" class="nav-link">Sobre Nós</a></li>
-                <li><a href="faleconosco.html" class="nav-link" aria-current="page">Suporte</a></li>
-            </ul>
-        </nav>
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu de navegação">
+                <span class="hamburger" aria-hidden="true"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+            
+            <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+                <form class="search-form" aria-label="Busca de produtos" role="search">
+                    <label for="busca-produto" class="sr-only">Busque aqui seu produto:</label>
+                    <input type="text" id="busca-produto" name="busca-produto" placeholder="Digite o nome do produto" aria-label="Campo de busca de produtos">
+                    <button type="submit" aria-label="Buscar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="sr-only">Buscar</span>
+                    </button>
+                </form>
+                
+                <ul class="nav-list">
+                    <li><a href="loja.html" class="nav-link">Loja</a></li>
+                    <li><a href="carrinho/index.html" class="nav-link">Carrinho <span class="cart-count" aria-live="polite">0</span></a></li>
+                    <li><a href="sobre-nos.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="faleconosco.html" class="nav-link active" aria-current="page">Suporte</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main id="main-content" role="main">
@@ -81,40 +106,55 @@
                         <p>Entre em contato com nossa equipe de suporte para dúvidas, sugestões ou informações sobre nossos produtos. Responderemos em até 48 horas úteis.</p>
                         <form class="contact-form" aria-label="Formulário de contato" id="contact-form" novalidate>
                             <div class="form-group">
-                                <label for="nome" class="form-label">Nome completo <span class="required">*</span></label>
-                                <input type="text" id="nome" name="nome" required aria-required="true" minlength="3">
-                                <span class="error-message" aria-live="polite"></span>
+                                <label for="nome" class="form-label">Nome completo <span class="required" aria-hidden="true">*</span></label>
+                                <input type="text" id="nome" name="nome" required aria-required="true" minlength="3" placeholder="Seu nome completo">
+                                <span class="error-message" aria-live="polite" role="alert"></span>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email" class="form-label">E-mail <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" required aria-required="true">
-                                <span class="error-message" aria-live="polite"></span>
+                                <label for="email" class="form-label">E-mail <span class="required" aria-hidden="true">*</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true" placeholder="seu@email.com">
+                                <span class="error-message" aria-live="polite" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
                             </div>
                             
                             <div class="form-group">
                                 <label for="assunto" class="form-label">Assunto</label>
-                                <select id="assunto" name="assunto">
+                                <select id="assunto" name="assunto" aria-describedby="assunto-help">
                                     <option value="">Selecione um assunto</option>
                                     <option value="duvida">Dúvida sobre produtos</option>
                                     <option value="sugestao">Sugestão</option>
                                     <option value="reclamacao">Reclamação</option>
+                                    <option value="elogio">Elogio</option>
                                     <option value="outro">Outro</option>
                                 </select>
+                                <small id="assunto-help" class="form-help-text">Selecione o assunto mais relacionado à sua mensagem</small>
                             </div>
                             
                             <div class="form-group">
-                                <label for="mensagem" class="form-label">Mensagem <span class="required">*</span></label>
-                                <textarea id="mensagem" name="mensagem" required aria-required="true" minlength="10"></textarea>
-                                <span class="error-message" aria-live="polite"></span>
+                                <label for="mensagem" class="form-label">Mensagem <span class="required" aria-hidden="true">*</span></label>
+                                <textarea id="mensagem" name="mensagem" required aria-required="true" minlength="10" placeholder="Descreva sua dúvida, sugestão ou feedback" aria-describedby="mensagem-help"></textarea>
+                                <small id="mensagem-help" class="form-help-text">Mínimo de 10 caracteres</small>
+                                <span class="error-message" aria-live="polite" role="alert"></span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group checkbox-group">
                                 <input type="checkbox" id="consentimento" name="consentimento" required aria-required="true">
-                                <label for="consentimento">Concordo com a política de privacidade e tratamento de dados</label>
+                                <label for="consentimento">Concordo com a <a href="politica-privacidade.html" target="_blank">política de privacidade</a> e tratamento de dados</label>
+                                <span class="error-message" aria-live="polite" role="alert"></span>
                             </div>
                             
-                            <button type="submit" class="btn-submit">Enviar mensagem</button>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">
+                                    <span class="btn-text">Enviar mensagem</span>
+                                    <span class="btn-loading" aria-hidden="true"></span>
+                                </button>
+                                <button type="reset" class="btn-reset">Limpar formulário</button>
+                            </div>
                         </form>
                     </div>
                     
