@@ -23,32 +23,41 @@
     <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
     
     <!-- Cabeçalho -->
+    <!-- Cabeçalho -->
     <header class="header" role="banner">
-        <div class="logo">
-            <a href="index.html" aria-label="Página inicial da Mondelez">
-                <img src="checkout_gp1/img/logo_mondelez.jpeg" alt="Logo Mondelez" width="150" height="50" loading="lazy">
-            </a>
-        </div>
-        
-        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
-            <span class="sr-only">Menu</span>
-            ☰
-        </button>
-        
-        <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
-            <form class="search-form" aria-label="Busca de produtos" role="search">
-                <label for="busca-produto" class="sr-only">Busque aqui seu produto:</label>
-                <input type="text" id="busca-produto" name="busca-produto" placeholder="Digite o nome do produto" aria-label="Campo de busca de produtos">
-                <button type="submit" aria-label="Buscar">🔍</button>
-            </form>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Página inicial da Mondelez">
+                    <img src="checkout_gp1/img/logo_mondelez.jpeg" alt="Logo Mondelez" width="150" height="50" loading="eager">
+                </a>
+            </div>
             
-            <ul class="nav-list">
-                <li><a href="loja.html" class="nav-link">Loja</a></li>
-                <li><a href="carrinho/index.html" class="nav-link">Carrinho <span class="cart-count" aria-live="polite">0</span></a></li>
-                <li><a href="sobre-nos.html" class="nav-link">Sobre Nós</a></li>
-                <li><a href="faleconosco.html" class="nav-link" aria-current="page">Suporte</a></li>
-            </ul>
-        </nav>
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menu de navegação">
+                <span class="hamburger" aria-hidden="true"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+            
+            <nav class="nav" id="primary-navigation" role="navigation" aria-label="Navegação principal">
+                <form class="search-form" aria-label="Busca de produtos" role="search">
+                    <label for="busca-produto" class="sr-only">Busque aqui seu produto:</label>
+                    <input type="text" id="busca-produto" name="busca-produto" placeholder="Digite o nome do produto" aria-label="Campo de busca de produtos">
+                    <button type="submit" aria-label="Buscar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="sr-only">Buscar</span>
+                    </button>
+                </form>
+                
+                <ul class="nav-list">
+                    <li><a href="loja.html" class="nav-link">Loja</a></li>
+                    <li><a href="carrinho/index.html" class="nav-link">Carrinho <span class="cart-count" aria-live="polite">0</span></a></li>
+                    <li><a href="sobre-nos.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="faleconosco.html" class="nav-link active" aria-current="page">Suporte</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main id="main-content" role="main">
@@ -81,51 +90,115 @@
                         <p>Entre em contato com nossa equipe de suporte para dúvidas, sugestões ou informações sobre nossos produtos. Responderemos em até 48 horas úteis.</p>
                         <form class="contact-form" aria-label="Formulário de contato" id="contact-form" novalidate>
                             <div class="form-group">
-                                <label for="nome" class="form-label">Nome completo <span class="required">*</span></label>
-                                <input type="text" id="nome" name="nome" required aria-required="true" minlength="3">
-                                <span class="error-message" aria-live="polite"></span>
+                                <label for="nome" class="form-label">Nome completo <span class="required" aria-hidden="true">*</span></label>
+                                <input type="text" id="nome" name="nome" required aria-required="true" minlength="3" placeholder="Seu nome completo">
+                                <span class="error-message" aria-live="polite" role="alert"></span>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email" class="form-label">E-mail <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" required aria-required="true">
-                                <span class="error-message" aria-live="polite"></span>
+                                <label for="email" class="form-label">E-mail <span class="required" aria-hidden="true">*</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true" placeholder="seu@email.com">
+                                <span class="error-message" aria-live="polite" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
                             </div>
                             
                             <div class="form-group">
                                 <label for="assunto" class="form-label">Assunto</label>
-                                <select id="assunto" name="assunto">
+                                <select id="assunto" name="assunto" aria-describedby="assunto-help">
                                     <option value="">Selecione um assunto</option>
                                     <option value="duvida">Dúvida sobre produtos</option>
                                     <option value="sugestao">Sugestão</option>
                                     <option value="reclamacao">Reclamação</option>
+                                    <option value="elogio">Elogio</option>
                                     <option value="outro">Outro</option>
                                 </select>
+                                <small id="assunto-help" class="form-help-text">Selecione o assunto mais relacionado à sua mensagem</small>
                             </div>
                             
                             <div class="form-group">
-                                <label for="mensagem" class="form-label">Mensagem <span class="required">*</span></label>
-                                <textarea id="mensagem" name="mensagem" required aria-required="true" minlength="10"></textarea>
-                                <span class="error-message" aria-live="polite"></span>
+                                <label for="mensagem" class="form-label">Mensagem <span class="required" aria-hidden="true">*</span></label>
+                                <textarea id="mensagem" name="mensagem" required aria-required="true" minlength="10" placeholder="Descreva sua dúvida, sugestão ou feedback" aria-describedby="mensagem-help"></textarea>
+                                <small id="mensagem-help" class="form-help-text">Mínimo de 10 caracteres</small>
+                                <span class="error-message" aria-live="polite" role="alert"></span>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group checkbox-group">
                                 <input type="checkbox" id="consentimento" name="consentimento" required aria-required="true">
-                                <label for="consentimento">Concordo com a política de privacidade e tratamento de dados</label>
+                                <label for="consentimento">Concordo com a <a href="politica-privacidade.html" target="_blank">política de privacidade</a> e tratamento de dados</label>
+                                <span class="error-message" aria-live="polite" role="alert"></span>
                             </div>
                             
-                            <button type="submit" class="btn-submit">Enviar mensagem</button>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">
+                                    <span class="btn-text">Enviar mensagem</span>
+                                    <span class="btn-loading" aria-hidden="true"></span>
+                                </button>
+                                <button type="reset" class="btn-reset">Limpar formulário</button>
+                            </div>
                         </form>
                     </div>
                     
                     <div class="suporte">
                         <div class="suporte-card">
-                            <img src="checkout_gp1/img/atendente.jpeg" alt="Atendente de suporte sorrindo" loading="lazy" width="400" height="300">
+                            <div class="suporte-image">
+                                <img src="checkout_gp1/img/atendente.jpeg" alt="Atendente de suporte sorrindo" width="300" height="200" loading="lazy">
+                            </div>
                             <div class="suporte-info">
                                 <h3>Fale conosco</h3>
-                                <p><strong>E-mail de Suporte:</strong> <a href="mailto:suporte@mondelez.com.br">suporte@mondelez.com.br</a></p>
-                                <p><strong>Telefone:</strong> <a href="tel:08007041940">0800 704 1940</a></p>
-                                <p><strong>Horário de atendimento:</strong> Segunda a sexta, das 8h às 18h</p>
+                                <div class="contact-method">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <p><strong>E-mail de Suporte:</strong> <a href="mailto:suporte@mondelez.com.br">suporte@mondelez.com.br</a></p>
+                                </div>
+                                <div class="contact-method">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M22 16.92V19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H16.47C15.71 21 15.03 20.59 14.72 19.89L12.41 14.59C12.21 14.14 12.3 13.62 12.65 13.27L16 9.93C16.93 9 17.54 7.83 17.74 6.57C17.77 6.33 17.75 6.08 17.67 5.84C17.58 5.59 17.43 5.37 17.24 5.19L15.83 3.78C15.5 3.45 15.03 3.27 14.56 3.33C13.17 3.5 11.88 4.16 10.89 5.15L5.03 11.01C4.28 11.76 3.9 12.79 4 13.82L4.25 16.22C4.39 17.79 5.71 19 7.29 19H9.08" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <p><strong>Telefone:</strong> <a href="tel:08007041940">0800 704 1940</a></p>
+                                </div>
+                                <div class="contact-method">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 14H8.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 14H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 14H16.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 18H8.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 18H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 18H16.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <p><strong>Horário de atendimento:</strong> Segunda a sexta, das 8h às 18h</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media">
+                            <h4>Siga-nos nas redes sociais</h4>
+                            <div class="social-links">
+                                <a href="https://facebook.com/mondelez" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <a href="https://instagram.com/mondelez" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61991 14.1902 8.22773 13.4229 8.09406 12.5922C7.9604 11.7616 8.09206 10.9099 8.47032 10.1584C8.84858 9.40685 9.45419 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2648 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <a href="https://twitter.com/mondelez" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.9572 14.8821 3.28445C14.0247 3.61171 13.2884 4.1944 12.773 4.95372C12.2575 5.71303 11.9877 6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -136,60 +209,120 @@
         <!-- FAQ -->
         <section class="faq" aria-labelledby="faq-heading">
             <div class="container">
-                <h2 id="faq-heading">Perguntas Frequentes (FAQ)</h2>
+                <div class="section-header">
+                    <h2 id="faq-heading">Perguntas Frequentes (FAQ)</h2>
+                    <p>Encontre respostas para as dúvidas mais comuns sobre nossos produtos e serviços.</p>
+                </div>
                 <div class="accordion">
                     <div class="accordion-item">
                         <button class="accordion-button" aria-expanded="false" aria-controls="faq1">
-                            Onde posso encontrar os produtos Mondelez?
-                            <span class="accordion-icon" aria-hidden="true">+</span>
+                            <span class="accordion-title">Onde posso encontrar os produtos Mondelez?</span>
+                            <span class="accordion-icon" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                         </button>
                         <div class="accordion-content" id="faq1" hidden>
                             <p>Nossos produtos estão disponíveis em supermercados, lojas de conveniência e mercados em todo o Brasil. Você também pode encontrar alguns de nossos produtos em nossa loja online.</p>
+                            <p>Para encontrar o ponto de venda mais próximo de você, utilize nosso <a href="onde-comprar.html">localizador de lojas</a>.</p>
                         </div>
                     </div>
                     
                     <div class="accordion-item">
                         <button class="accordion-button" aria-expanded="false" aria-controls="faq2">
-                            Os produtos contêm ingredientes alergênicos?
-                            <span class="accordion-icon" aria-hidden="true">+</span>
+                            <span class="accordion-title">Os produtos contêm ingredientes alergênicos?</span>
+                            <span class="accordion-icon" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                         </button>
                         <div class="accordion-content" id="faq2" hidden>
                             <p>Todos os nossos produtos possuem informações detalhadas sobre ingredientes alergênicos em suas embalagens. Recomendamos sempre verificar a lista de ingredientes antes do consumo.</p>
+                            <p>Principais alergênicos presentes em nossos produtos:</p>
+                            <ul>
+                                <li>Glúten</li>
+                                <li>Leite e derivados</li>
+                                <li>Soja</li>
+                                <li>Amendoim</li>
+                                <li>Ovos</li>
+                            </ul>
+                            <p>Para informações específicas sobre um produto, entre em contato com nosso suporte.</p>
                         </div>
                     </div>
                     
                     <div class="accordion-item">
                         <button class="accordion-button" aria-expanded="false" aria-controls="faq3">
-                            Como posso participar de promoções?
-                            <span class="accordion-icon" aria-hidden="true">+</span>
+                            <span class="accordion-title">Como posso participar de promoções?</span>
+                            <span class="accordion-icon" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                         </button>
                         <div class="accordion-content" id="faq3" hidden>
                             <p>Nossas promoções são divulgadas em nosso site e redes sociais. Algumas promoções exigem cadastro prévio ou comprovação de compra.</p>
+                            <p>Para participar:</p>
+                            <ol>
+                                <li>Acompanhe nossas redes sociais e newsletter</li>
+                                <li>Verifique os requisitos de cada promoção</li>
+                                <li>Siga as instruções de participação</li>
+                                <li>Mantenha seu cupom fiscal ou código de barras</li>
+                            </ol>
                         </div>
                     </div>
                     
                     <div class="accordion-item">
                         <button class="accordion-button" aria-expanded="false" aria-controls="faq4">
-                            Posso revender produtos Mondelez?
-                            <span class="accordion-icon" aria-hidden="true">+</span>
+                            <span class="accordion-title">Posso revender produtos Mondelez?</span>
+                            <span class="accordion-icon" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                         </button>
                         <div class="accordion-content" id="faq4" hidden>
-                            <p>Para se tornar um revendedor autorizado Mondelez, entre em contato com nosso departamento comercial através do e-mail comercial@mondelez.com.br.</p>
+                            <p>Para se tornar um revendedor autorizado Mondelez, entre em contato com nosso departamento comercial através do e-mail <a href="mailto:comercial@mondelez.com.br">comercial@mondelez.com.br</a>.</p>
+                            <p>Requisitos para revenda:</p>
+                            <ul>
+                                <li>CNPJ ativo</li>
+                                <li>Local adequado para armazenamento</li>
+                                <li>Cadastro nos órgãos competentes</li>
+                                <li>Volume mínimo de compra</li>
+                            </ul>
                         </div>
                     </div>
                     
                     <div class="accordion-item">
                         <button class="accordion-button" aria-expanded="false" aria-controls="faq5">
-                            Como faço para trabalhar na Mondelez?
-                            <span class="accordion-icon" aria-hidden="true">+</span>
+                            <span class="accordion-title">Como faço para trabalhar na Mondelez?</span>
+                            <span class="accordion-icon" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                         </button>
                         <div class="accordion-content" id="faq5" hidden>
-                            <p>Todas as nossas vagas são divulgadas em nosso site oficial na seção "Trabalhe Conosco". Você também pode se cadastrar em nosso banco de talentos.</p>
+                            <p>Todas as nossas vagas são divulgadas em nosso site oficial na seção <a href="trabalhe-conosco.html">"Trabalhe Conosco"</a>. Você também pode se cadastrar em nosso banco de talentos.</p>
+                            <p>Processo seletivo:</p>
+                            <ol>
+                                <li>Cadastro no site ou envio de currículo</li>
+                                <li>Análise de perfil</li>
+                                <li>Entrevistas</li>
+                                <li>Testes técnicos (quando aplicável)</li>
+                                <li>Proposta e admissão</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
+                
+                <div class="faq-footer">
+                    <p>Não encontrou a resposta que procurava? <a href="#contact-form">Envie-nos sua dúvida</a> e nossa equipe terá prazer em ajudar.</p>
+                </div>
             </div>
         </section>
+
     </main>
 
     <!-- Rodapé -->
