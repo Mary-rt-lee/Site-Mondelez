@@ -176,3 +176,16 @@ flex-direction: column;
 align-items: flex-start;
 
 }
+
+
+.itenspedido{
+    display: flex;
+    flex-direction: column;
+
+    transform: translateY(-50%); 
+    transform: translateX(70%);
+   
+    position: absolute;
+    top: 80%;
+    right: 40%;
+}
