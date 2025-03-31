@@ -144,6 +144,7 @@ footer ul li {
 
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 
@@ -177,15 +178,92 @@ align-items: flex-start;
 
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 .itenspedido{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    
 
-    transform: translateY(-50%); 
-    transform: translateX(70%);
-   
+    
+
+    background-color: white;
+    max-width: 600px;
+    height: 190px;
+    width: 400px;
+ border-radius: 20px;
+}
+
+.itenspedido p{
+    font-size: 10px;
+    color: #6049a6;
+}
+
+.itenspedido h3{
+    margin: 10px;
+    color: #6049a6;
+}
+
+.all{
+    padding: 50px;
+    display: flex;
+
+}
+
+.input-dados{
+    position: relative;
+    margin: 20px 0 ;
+
+    background-color: white;
+    max-width: 600px;
+    height: 190px;
+    width: 500px;
+ border-radius: 20px;
+}
+
+.input-dados placeholder{
     position: absolute;
-    top: 80%;
-    right: 40%;
+    left: 0;
+    bottom: 5px;
+}
+
+.input{
+   width: 100%; 
+   border: 0;
+   border-bottom: 2px solid #6049a6;
+   padding: 5px;
+   font-size: 17px;
+   outline: 0;
+   
+}
+
+form .input-dados .input:focus ~ placeholder{
+    transform: translateY(-20px);
+    font-size: 12px;
+}
+
+.pagamento{
+    position: relative;
+    margin: 20px 0 ;
+    display: flex;
+    flex-direction: column;
+    
+  
+  
+
+    background-color: white;
+    max-width: 600px;
+    height: 190px;
+    width: 400px;
+ border-radius: 20px; 
+}
+
+section div h2{
+    display: flex;
 }
