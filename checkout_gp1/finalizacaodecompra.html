@@ -11,24 +11,25 @@
 <header>
     <div id="logo">
         <img src="site-Mondelez-grupo1/checkout_gp1/img/logotranspmondelez.png" alt="logo mondelez">
-    </div>
-    <nav>
-        <ul>
-            <li>
+            </div>
+            <nav>
                 <section>
                     <form>
-                        <label for="Busque aqui seu produto">Busque aqui seu produto:</label>
-                        <input type="text" id="Busque aqui seu produto" name="Busque aqui seu produto">
+                        <div class="search-container">
+                            <input type="search" id="busca" name="busca" placeholder="Busque aqui seu produto:">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
                     </form>
                 </section>
-                <a href="Loja">Loja</a>
-                <a href="Carrinho">Carrinho</a>
-                <a href="Sobre nós">Sobre nós</a>
-                <a href="Suporte">Suporte</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+                <ul>
+                    <li><a href="Home">Home</a></li>
+                    <li><a href="Loja">Loja</a></li>
+                    <li><a href="Carrinho">Carrinho</a></li>
+                    <li><a href="Sobre">Sobre nós</a></li>
+                    <li><a href="Suporte">Suporte</a></li>
+                </ul>
+            </nav>
+        </header>
 <div class="all">
     <body>
         <main>
@@ -86,16 +87,17 @@
         <section>
             <div class="pagamento">
                 <h2>Forma de pagamento</h2>
-                    <label for="CartCréd">Cartão de crédito</label>
+                <p>Cartão de crédito</p>
+                    <label for="CartCréd"></label>
                     <input type="radio" id="CartCréd" placeholder="Cartão de crédito">
-
+              <div class="pagamentoimg">
                 <img src="img/mastercard_logo.jpeg" alt="mastercard logo" width="34px" height="23px">
                 <img src="img/pix_logo.jpeg" alt="pix logo" width="34px" height="23px">
                 <img src="img/visa_logo.jpeg" alt="visa logo" width="34px" height="23px">
                 <img src="img/santander_logo.jpeg" alt="santander logo" width="34px" height="23px">
                 <img src="img/boleto.jpeg" alt="boleto logo" width="34px" height="23px">
                 <img src="img/elo_logo.jpeg" alt="elo logo" width="34px" height="23px">
-            
+            </div>
             
                     <label for="Ncartão"></label>
                     <input type="text" id="Ncartão" class="input" placeholder="Número do cartão">
