@@ -375,17 +375,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* ==========================================================================
-   FAQ Styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Enhanced FAQ Styles
-   ========================================================================== */
-
-/* ==========================================================================
-   FAQ LIST STYLES (NON-ACCORDION)
-   ========================================================================== */
 
 .faq {
     background-color: #ffffff;
@@ -413,6 +402,84 @@ nav ul li a:hover {
     font-size: 1.125rem;
     max-width: 700px;
     margin: 0 auto;
+}
+
+/* ==========================================================================
+   Social Media Section Styles
+   ========================================================================== */
+
+.social-section {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+    text-align: left;
+}
+
+.social-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.social-section h3 {
+    color: #2d3748;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    justify-content: left;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    opacity: 0.9;
+}
+
+.social-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .social-section {
+        padding: 2rem 0;
+    }
+    
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .faq-list {
