@@ -10,152 +10,159 @@
 <!--Menu-->
 <header>
     <div id="logo">
-        <img src="img/logo_mondelez.jpeg" alt="logo mondelez">
-    </div>
-    <nav>
-        <ul>
-            <li>
+        <img src="site-Mondelez-grupo1/checkout_gp1/img/logotranspmondelez.png" alt="logo mondelez">
+            </div>
+            <nav>
                 <section>
                     <form>
-                        <label for="Busque aqui seu produto">Busque aqui seu produto:</label>
-                        <input type="text" id="Busque aqui seu produto" name="Busque aqui seu produto">
+                        <div class="search-container">
+                            <input type="search" id="busca" name="busca" placeholder="Busque aqui seu produto:">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
                     </form>
                 </section>
-                <a href="Loja">Loja</a>
-                <a href="Carrinho">Carrinho</a>
-                <a href="Sobre nós">Sobre nós</a>
-                <a href="Suporte">Suporte</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+                <ul>
+                    <li><a href="Home">Home</a></li>
+                    <li><a href="Loja">Loja</a></li>
+                    <li><a href="Carrinho">Carrinho</a></li>
+                    <li><a href="Sobre">Sobre nós</a></li>
+                    <li><a href="Suporte">Suporte</a></li>
+                </ul>
+            </nav>
+        </header>
+<div class="all">
+    <body>
+        <main>
+            <section>
+<div class="boxforms">
+<div class="input-dados">
+                <form action="" method="get">
+                    <h2> Dados pessoais </h2>
+                    <label for="nome"></label>
+                    <input type="text" id="nome" class="input" placeholder="Nome completo*" required />
+                    <label for="Ntelefone"></label>
+                    <input type="tel" id="Ntelefone" class="input" placeholder="Número de telefone* BR +55" required />
+                    <p class="legenda">É necessário um numero de telefone válido para entrega</p>
+                
+                        <label for="Localização">Localização:</label>
+                        <select id="Localização" placeholder="Localização*" required>
+                            <option value="Brasil">Brasil</option>
+                        </select>
+                       
+                            <label for="estado"></label>
+                            <input type="text" id="" placeholder="Estado*" class="input" required />
+                     
+           
+              
+                
+                        <label for="cep-codpostal"></label>
+                        <input type="text" id="cep-codpostal" class="input" placeholder="CEP/Código Postal*" required/>
+                        <label for="endereço"></label>
+                        <input type="text" id="endereço" class="input" placeholder="Endereço*" required/>
+               
+                
+              
+                        <label for="informadicionais"></label>
+                        <input type="text" id="informadicionais" class="input" placeholder="Informações adicionais" />
+                
+               
+              
+                        <label for="Bairro"></label>
+                        <input type="text" id="Bairro" class="input" placeholder="Bairro*" required/>
+                
+               
+                
+                    <form action="" method="get">
+                        <label for="CPF"></label>
+                        <input type="text" id="CPF" class="input" placeholder="Número de CPF*" maxlength="15"/>
+                    <p class="legenda">Preencha um CPF válido que corresponda ao nome
+                            inserido anteriormente</p>
+</div>            
+            </section>
+        </main>
+        <br>
+        
 
-<body>
-    <h1>finalização da compra</h1>
-    <main>
+        <br>
+        <section>
+            <div class="pagamento">
+                <h2>Forma de pagamento</h2>
+                <p>Cartão de crédito</p>
+                    <label for="CartCréd"></label>
+                    <input type="radio" id="CartCréd" placeholder="Cartão de crédito">
+              <div class="pagamentoimg">
+                <img src="img/mastercard_logo.jpeg" alt="mastercard logo" width="34px" height="23px">
+                <img src="img/pix_logo.jpeg" alt="pix logo" width="34px" height="23px">
+                <img src="img/visa_logo.jpeg" alt="visa logo" width="34px" height="23px">
+                <img src="img/santander_logo.jpeg" alt="santander logo" width="34px" height="23px">
+                <img src="img/boleto.jpeg" alt="boleto logo" width="34px" height="23px">
+                <img src="img/elo_logo.jpeg" alt="elo logo" width="34px" height="23px">
+            </div>
+            
+                    <label for="Ncartão"></label>
+                    <input type="text" id="Ncartão" class="input" placeholder="Número do cartão">
+                    <label for="codsegurança"></label>
+                    <input type="text" id="codsegurança" class="input" placeholder="Código de segurança">
+
+                
+                        <label for="validade">Validade:</label>
+                        <select id="validade">
+                            <option value="mês">Jan</option>
+                            <option value="mês">Fev</option>
+                            <option value="mês">Mar</option>
+                            <option value="mês">Abr</option>
+                            <option value="mês">Mai</option>
+                            <option value="mês">Jun</option>
+                            <option value="mês">Jul</option>
+                            <option value="mês">Ago</option>
+                            <option value="mês">Set</option>
+                            <option value="mês">Out</option>
+                            <option value="mês">Nov</option>
+                            <option value="mês">Dez</option>
+                        </select>
+                        <select id="validade">
+                            <option value="ano">2026</option>
+                            <option value="ano">2027</option>
+                            <option value="ano">2028</option>
+                            <option value="ano">2029</option>
+                        </select>
+                
+                        <label for="Nparcelas">Números de parcelas:</label>
+                        <select id="Nparcelas">
+                            <option value="Nparcelas">Á vista - R$0,00</option>
+                            <option value="Nparcelas">2 vezez - R$x,xx</option>
+                            <option value="Nparcelas">10 vezes - R$x,xx</option>
+                        </select>
+</div>
+</div>
+        </section>
         <section>
             <div>
-             <form action="" method="get">
-                <h2> Dados pessoais </h2>
-                <label for="nome"></label>
-                <input type="text" id="nome" placeholder="Nome completo*" required />
-                <label for="Ntelefone"></label>
-                <input type="tel" id="Ntelefone" placeholder="Número de telefone* BR +55" required />
-                <p>É necessário um numero de telefone válido para entrega</p>
-            </div>
-            <div>
-                    <label for="Localização">Localização:</label>
-                    <select id="Localização" placeholder="Localização*" required>
-                        <option value="Brasil">Brasil</option>
-                    </select>
-                    <label for="estado"></label>
-                    <input type="text" id="" placeholder="Estado*" required />
-            </div>
-            <br>
-            <div>
-                    <label for="cep-codpostal"></label>
-                    <input type="text" id="cep-codpostal" placeholder="CEP/Código Postal*" required/>
-                    <label for="endereço"></label>
-                    <input type="text" id="endereço" placeholder="Endereço*" required/>
-            </div>
-            <br>
-            <div>
-                    <label for="informadicionais"></label>
-                    <input type="text" id="informadicionais" placeholder="Informações adicionais" />
-            </div>
-            <br>
-            <div>
-                    <label for="Bairro"></label>
-                    <input type="text" id="Bairro" placeholder="Bairro*" required/>
-            </div>
-            <br>
-            <div>
-                <form action="" method="get">
-                    <label for="CPF"></label>
-                    <input type="text" id="CPF" placeholder="Número de CPF*" maxlength="15"/>
-                    <p>Preencha um CPF válido que corresponda ao nome
-                        inserido anteriormente</p>
-            </div>
+                <h2>Finalizar compra</h2>
+                <h4>total de itens</h4>
+                <h4>subtotal</h4>
+
+                <h4>frete</h4>
+                <section class="itenspedido">
+                <h3>Itens do pedido</h3>
+                <p>sem itens no momento</p>
+            </section>
+            <div class="btn">
+                <input type="submit" value="Finalizar compra" />
+                </form>
+            </div> 
+        </div> 
+            
         </section>
-    </main>
+    </body>
+
     <section>
-        <div>
-            <h2>Forma de pagamento</h2>
-                <label for="CartCréd">Cartão de crédito</label>
-                <input type="radio" id="CartCréd" placeholder="Cartão de crédito">
-
-<img src="img/mastercard_logo.jpeg" alt="mastercard logo">
-<img src="img/pix_logo.jpeg" alt="pix logo">
-<img src="img/visa_logo.jpeg" alt="visa logo">
-<img src="img/santander_logo.jpeg" alt="santander logo">
-<img src="img/boleto.jpeg" alt="boleto logo">
-<img src="img/elo_logo.jpeg" alt="elo logo">
-
-
-        </div>
-        <br>
-        <div>
-                <label for="Ncartão">Número do cartão:</label>
-                <input type="text" id="Ncartão" placeholder="Número do cartão">
-                <label for="codsegurança">Código de segurança:</label>
-                <input type="text" id="codsegurança" placeholder="Código de segurança">
-            </div>
-            <br>
-            <div>
-                    <label for="validade">Validade:</label>
-                    <select id="validade">
-                        <option value="mês">Jan</option>
-                        <option value="mês">Fev</option>
-                        <option value="mês">Mar</option>
-                        <option value="mês">Abr</option>
-                        <option value="mês">Mai</option>
-                        <option value="mês">Jun</option>
-                        <option value="mês">Jul</option>
-                        <option value="mês">Ago</option>
-                        <option value="mês">Set</option>
-                        <option value="mês">Out</option>
-                        <option value="mês">Nov</option>
-                        <option value="mês">Dez</option>
-                    </select>
-                    <select id="validade">
-                        <option value="ano">2026</option>
-                        <option value="ano">2027</option>
-                        <option value="ano">2028</option>
-                        <option value="ano">2029</option>
-                    </select>
-            </div>
-            <br>
-            <div>
-                    <label for="Nparcelas">Números de parcelas:</label>
-                    <select id="Nparcelas">
-                        <option value="Nparcelas">Á vista - R$0,00</option>
-                        <option value="Nparcelas">2 vezez - R$x,xx</option>
-                        <option value="Nparcelas">10 vezes - R$x,xx</option>
-                    </select>
-            </div>
+        <a href="https://pt-br.facebook.com/mondelezinternational/photos"><img src="img/facebook_icon.jpeg" alt="imagem Facebook" width="25px" height="25px"></a>
+        <a href="https://www.instagram.com/mondelez_international/"><img src="img/instagram_icon.jpeg" alt="imagem Instagram" width="25px" height="25px"></a>
+        <a href="https://br.linkedin.com/company/mondelezinternational"><img src="img/linkedin_icon.jpeg" alt="imagem Linkedin" width="25px" height="25px"></a>
+        <a href="https://x.com/mdlz?lang=bn"><img src="img/x_icon.jpeg" alt="imagem X" width="25px" height="25px"></a>
     </section>
-    <section>
-        <div>
-            <h2>Finalizar compra</h2>
-            <h4>total de itens</h4>
-            <h4>subtotal</h4>
-
-            <h4>frete</h4>
-            <input type="submit" value="Finalizar compra" />
-            </form> 
-            <h3>Itens do pedido</h3>
-            <p>sem itens no momento</p>
-        </div>
-    </section>
-</body>
-
-<section>
-    <a href="https://pt-br.facebook.com/mondelezinternational/photos"><img src="img/facebook_icon.jpeg" alt="imagem Facebook"></a>
-    <a href="https://www.instagram.com/mondelez_international/"><img src="img/instagram_icon.jpeg" alt="imagem Instagram"></a>
-    <a href="https://br.linkedin.com/company/mondelezinternational"><img src="img/linkedin_icon.jpeg" alt="imagem Linkedin"></a>
-    <a href="https://x.com/mdlz?lang=bn"><img src="img/x_icon.jpeg" alt="imagem X"></a>
-</section>
-
+</div>
 <footer>
     <h3>Contato e Suporte</h3>
 
