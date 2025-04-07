@@ -148,6 +148,7 @@ footer ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 50px;
 
 
     
@@ -169,12 +170,17 @@ footer ul li {
     color: #6049a6;
 }
 
+
 .all{
     padding: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-between;
+    margin: 50px;
+    margin-bottom: -30px;
+    margin-top: -30px;
+    padding: 80px;
 }
 
 
@@ -255,7 +261,7 @@ section div h2{
 }
 
 select{
-    width: 200px;
+    width: 150px;
     border-radius: 20px;
     border-color: #6049a6;
 }
@@ -270,6 +276,7 @@ select{
 
 .btn{
     margin-top: 20px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     
