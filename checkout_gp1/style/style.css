@@ -147,17 +147,28 @@ footer ul li {
 .itenspedido{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 50px;
+    align-items: normal;
+    margin: 30px;
+    margin-left: 460px;
 
 
     
 
     background-color: white;
     max-width: 600px;
-    height: 190px;
+    height: 300px;
     width: 400px;
  border-radius: 20px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.totaldeitens{
+    margin-left: 30px;
+    
 }
 
 .itenspedido p{
@@ -169,18 +180,30 @@ footer ul li {
     margin: 10px;
     color: #6049a6;
 }
+.itenspedido h4{
+    color: #6049a6;
+}
+.itenspedido h2{
+    color: #6049a6;
+    margin: 15px;
+    margin-top: 30px;
+    color: #201150;
 
+}
 
 .all{
     padding: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
     justify-content: space-between;
-    margin: 50px;
-    margin-bottom: -30px;
-    margin-top: -30px;
-    padding: 80px;
+    margin: 30px;
+    margin-bottom: -20px;
+    margin-top: -20px;
+   margin-left: 100px;
+}
+
+.all section{
+    margin-right: 100px;
 }
 
 
@@ -264,6 +287,7 @@ select{
     width: 150px;
     border-radius: 20px;
     border-color: #6049a6;
+    cursor: pointer;
 }
 
 .boxforms label{
@@ -282,4 +306,15 @@ select{
     
     
     height: 60px;
+   
+}
+
+.btn input{
+     background-color: var(--dropdown-background-color);
+     color: var(--text-color);
+     border-radius: 30px;
+     width: 300px;
+     font-size: 20px;
+     border-color: var(--dropdown-background-color);
+     cursor: pointer;
 }
