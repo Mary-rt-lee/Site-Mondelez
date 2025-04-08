@@ -1,1 +1,320 @@
+:root {
+    --background-color: #ede9e9;
+    --header-background-color: #6049a6;
+    --dropdown-background-color: #6049a6;
+    --product-card-background-color: #d3d3d3;
+    --badge-background-color: #6049a6;
+    --text-color: white;
+}
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--header-background-color);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo img {
+    height: 70px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+    
+}
+
+nav section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+nav form {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+}
+
+nav input[type="search"] {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 400px;
+    padding-right: 40px;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    background-color: #6049a6;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.support-container {
+    display: flex;
+    width: 100%;
+}
+
+.contact-support, .consumer-support {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.consumer-support {
+    margin-left: -600px;
+}
+
+footer h3 {
+    margin: 15px 0;
+    font-size: 1.3em;
+}
+
+footer .small-title {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.itenspedido{
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    margin: 30px;
+    margin-left: 460px;
+
+
+    
+
+    background-color: white;
+    max-width: 600px;
+    height: 300px;
+    width: 400px;
+ border-radius: 20px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.totaldeitens{
+    margin-left: 30px;
+    
+}
+
+.itenspedido p{
+    font-size: 10px;
+    color: #6049a6;
+}
+
+.itenspedido h3{
+    margin: 10px;
+    color: #6049a6;
+}
+.itenspedido h4{
+    color: #6049a6;
+}
+.itenspedido h2{
+    color: #6049a6;
+    margin: 15px;
+    margin-top: 30px;
+    color: #201150;
+
+}
+
+.all{
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+    margin-bottom: -20px;
+    margin-top: -20px;
+   margin-left: 100px;
+}
+
+.all section{
+    margin-right: 100px;
+}
+
+
+.input-dados{
+    position: relative;
+    margin: 20px 0 ;
+
+    background-color: white;
+    max-width: 600px;
+    height: 400px;
+    width: 400px;
+ border-radius: 20px;
+ padding: 40px;
+
+}
+
+.input-dados placeholder{
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+}
+
+.input{
+   width: 60%; 
+   border: 0;
+   border-bottom: 2px solid #6049a6;
+   padding: 5px;
+   font-size: 13px;
+   outline: 0;
+   
+}
+
+
+form h2{
+    text-align: center;
+    font-size: 25px;
+    color: #201150;
+}
+
+.pagamento{
+    position: relative;
+    margin: 20px 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  
+  
+    padding: 40px;
+    background-color: white;
+    max-width: 600px;
+    height: 400px;
+    width: 400px;
+ border-radius: 20px; 
+}
+
+.pagamento h2{
+    text-align: center;
+    font-size: 25px;
+    color: #201150;
+    
+}
+
+.pagamento p{
+    margin-top: 20px;
+}
+.pagamento label{
+   margin-top: 4px ;
+    text-align: left;
+}
+
+section div h2{
+    display: flex;
+}
+
+.legenda{
+    font-size: 60%;
+}
+
+select{
+    width: 150px;
+    border-radius: 20px;
+    border-color: #6049a6;
+    cursor: pointer;
+}
+
+.boxforms label{
+    font-size: 12px;
+}
+
+.pagamento label{
+    font-size: 12px;
+}
+
+.btn{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    
+    
+    height: 60px;
+   
+}
+
+.btn input{
+     background-color: var(--dropdown-background-color);
+     color: var(--text-color);
+     border-radius: 30px;
+     width: 300px;
+     font-size: 20px;
+     border-color: var(--dropdown-background-color);
+     cursor: pointer;
+}
