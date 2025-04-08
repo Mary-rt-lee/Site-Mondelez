@@ -124,15 +124,16 @@ nav ul li a:hover {
  
 /* texto e imagem */
 
-.container {
+/*.container {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
+  gap: 0px;
   padding: 20px;
   flex-wrap: wrap;
-}
+}*/
 
-.texto {
+/*.texto {
+  gap: 20px;
   flex: 1;
   min-width: 300px;
 }
@@ -163,8 +164,63 @@ nav ul li a:hover {
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+} */
+
+/* fazendo de novo o texto e imagem*/
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 40px;
+  flex-wrap: nowrap;
 }
 
+.texto {
+  position: absolute;
+  top: -400px;
+  flex: 2;
+  max-width: 90%;
+  font-family: Arial, sans-serif;
+}
+
+.texto h1, .texto h2 {
+  color: #6049a6;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.texto ul {
+  list-style: disc;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.imagens {
+  gap: 40px;
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+}
+
+.imagens img {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
 
 /* parte da cauda */
@@ -176,6 +232,7 @@ nav ul li a:hover {
   width: 100%;
   height: 456px;
   opacity: 0.3;
+  object-fit: cover
  }
 
 /* Imagens da página */
@@ -206,13 +263,13 @@ nav ul li a:hover {
 .redesocial {
   display: flex;
  justify-content: left;
-  gap: 0px;
+  gap: 5px;
   margin: 0;
-  padding: 5px;
+  padding: 10px;
 }
 
 .redesocial img {
-  width: 20px;
+  width: 30px;
   transition: 0.3s;
 }
 
