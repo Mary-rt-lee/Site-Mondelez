@@ -254,18 +254,56 @@ nav ul li a:hover {
   padding: 20px;
 }*/
 
- .mascotemdlz {
- width: 90px;
+ /*.mascotemdlz {
+ width: 90px; 
   
-}
+}*/
 
 /* Redes Sociais */
-.redesocial {
+/*.redesocial {
   display: flex;
  justify-content: left;
   gap: 5px;
   margin: 0;
   padding: 10px;
+}
+
+.redesocial img {
+  width: 30px;
+  transition: 0.3s;
+}
+
+.redesocial img:hover {
+  transform: scale(1.1);
+} */
+
+
+#mascotemdlz {
+  width: 90px;
+  transform: scaleX(-1);
+  transition: transform 0.3s;
+  margin-right: 20px;
+}
+#mascotemdlz:hover {
+  transform: scaleX(-1) scale(1.1);
+}
+
+/* Redes Sociais */
+.redesocial {
+  display: flex;
+  width: 100%;
+  margin: 5;
+  padding: 10px;
+
+
+}
+
+.esquerda {
+  margin-left: 20px;
+  gap: 10px;
+  display: flex; /* Adiciona display flex para organizar os ícones em linha */
+  align-items: center; /* Centraliza os ícones verticalmente, se desejado */
+  flex-grow: 1; /* Faz com que o div esquerda ocupe o espaço restante */
 }
 
 .redesocial img {
