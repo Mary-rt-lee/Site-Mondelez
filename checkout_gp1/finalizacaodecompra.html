@@ -30,59 +30,60 @@
                 </ul>
             </nav>
         </header>
-<div class="all">
+<!-- <div class="all"> -->
     <body>
         <main>
-            <section>
+             
+            <section class="input-dados">
 <div class="boxforms">
-<div class="input-dados">
-                <form action="" method="get">
+<!-- <div > -->
+   
+     <form action="" method="get">
                     <h2> Dados pessoais </h2>
-                    <label for="nome"></label>
-                    <input type="text" id="nome" class="input" placeholder="Nome completo*" required />
-                    <label for="Ntelefone"></label>
-                    <input type="tel" id="Ntelefone" class="input" placeholder="Número de telefone* BR +55" required />
+                    <label for="nome">Nome completo <span class="required">*</span></label>
+                    <input type="text" id="nome" class="input" placeholder="Seu nome completo" required />
+                    <label for="Ntelefone">Telefone <span class="required">*</span></label>
+                    <input type="tel" id="Ntelefone" class="input" placeholder="(00)00000-0000" required />
                     <p class="legenda">É necessário um numero de telefone válido para entrega</p>
                 
                         <label for="Localização">Localização:</label>
                         <select id="Localização" placeholder="Localização*" required>
+                            <option value="">Selecione uma localização</option>
                             <option value="Brasil">Brasil</option>
                         </select>
                        
-                            <label for="estado"></label>
-                            <input type="text" id="" placeholder="Estado*" class="input" required />
+                            <label for="estado">Estado <span class="required">*</span></label>
+                            <input type="text" id="estado" placeholder="Ex: Pernambuco" class="input" required />
                      
            
               
                 
-                        <label for="cep-codpostal"></label>
-                        <input type="text" id="cep-codpostal" class="input" placeholder="CEP/Código Postal*" required/>
-                        <label for="endereço"></label>
-                        <input type="text" id="endereço" class="input" placeholder="Endereço*" required/>
+                        <label for="cep-codpostal">CEP/Código Postal <span class="required">*</span></label>
+                        <input type="text" id="cep-codpostal" class="input" placeholder="00000-000" required/>
+                        <label for="endereço">Endereço <span class="required">*</span></label>
+                        <input type="text" id="endereço" class="input" placeholder="Informe seu endereço" required/>
                
                 
+                    <div class="inf-add">
+                        <label for="informadicionais">Informações adicionais</label>
+                        <input type="text" id="informadicionais" class="input" placeholder="Referências para entrega, horário de preferência para receber, detalhes complementares do endereço " />
+                </div>
+               
               
-                        <label for="informadicionais"></label>
-                        <input type="text" id="informadicionais" class="input" placeholder="Informações adicionais" />
-                
-               
-              
-                        <label for="Bairro"></label>
-                        <input type="text" id="Bairro" class="input" placeholder="Bairro*" required/>
+                        <label for="Bairro">Bairro <span class="required">*</span></label>
+                        <input type="text" id="Bairro" class="input" placeholder="Informe seu bairro" required/>
                 
                
                 
-                    <form action="" method="get">
-                        <label for="CPF"></label>
-                        <input type="text" id="CPF" class="input" placeholder="Número de CPF*" maxlength="15"/>
+                    <!-- <form action="" method="get"> -->
+                        <label for="CPF">Número de CPF <span class="required">*</span></label>
+                        <input type="text" id="CPF" class="input" placeholder="000.000.000-00" maxlength="15"/>
                     <p class="legenda">Preencha um CPF válido que corresponda ao nome
                             inserido anteriormente</p>
-</div>            
-            </section>
-        </main>
-       
-        <section>
-            <div class="pagamento">
+<!-- </div>             -->
+           
+        <!-- <section>
+            <div class="pagamento"> -->
                 <h2>Forma de pagamento</h2>
                 <p>Cartão de crédito</p>
                     <label for="CartCréd"></label>
@@ -96,14 +97,15 @@
                 <img src="img/elo_logo.jpeg" alt="elo logo" width="34px" height="23px">
             </div>
             
-                    <label for="Ncartão"></label>
-                    <input type="text" id="Ncartão" class="input" placeholder="Número do cartão">
-                    <label for="codsegurança"></label>
-                    <input type="text" id="codsegurança" class="input" placeholder="Código de segurança">
+                    <label for="Ncartão">Número do cartão</label>
+                    <input type="text" id="Ncartão" class="input" placeholder="0000 0000 0000 0000">
+                    <label for="codsegurança">Código de segurança</label>
+                    <input type="text" id="codsegurança" class="input" placeholder="000">
 
                 
                         <label for="validade">Validade:</label>
                         <select id="validade">
+                            <option value="">Mê<s></s></option>
                             <option value="mês">Jan</option>
                             <option value="mês">Fev</option>
                             <option value="mês">Mar</option>
@@ -118,6 +120,7 @@
                             <option value="mês">Dez</option>
                         </select>
                         <select id="validade">
+                            <option value="">Ano</option>
                             <option value="ano">2026</option>
                             <option value="ano">2027</option>
                             <option value="ano">2028</option>
@@ -130,32 +133,37 @@
                             <option value="Nparcelas">2 vezez - R$x,xx</option>
                             <option value="Nparcelas">10 vezes - R$x,xx</option>
                         </select>
-</div>
-</div>
-        </section>
+ </div>
+<!-- </div>  -->
+        <!-- </section>  --> <img src="img/ChatGPT Image 20 de abr. de 2025, 16_59_03.png" alt="" id="banner" height="90%" width="60%">
+    </section>
+     
+ </main> 
+       
         <section class="itenspedido">
-            <div class="text">
-                <h2>Finalizar compra</h2>
-            </div>
-            <div class="totaldeitens">
+             <div class="text">  
+                <h2>Resumo do pedido</h2>
+            </div>  
+            <div class="totaldeitens"> 
                 <h4>total de itens</h4>
                 <h4>subtotal</h4>
                 <h4>frete</h4>
             </div>
-              </div>
-                <section class="text">
+              </div> 
+                <div class="text"> 
                 <h3>Itens do pedido</h3>
                 <p>sem itens no momento</p>
-            </section>
+                </div> 
+                 <div class="btn">
+                <input class="btn" type="submit" value="Finalizar compra" />
+   </form>
         </section>
             
-        <div class="btn">
-                <input class="btn" type="submit" value="Finalizar compra" />
-                </form>
-            </div> 
+      
+         </div> 
            
         
-    </body>
+    
 
     <section>
         <a href="https://pt-br.facebook.com/mondelezinternational/photos"><img src="img/facebook_icon.jpeg" alt="imagem Facebook" width="25px" height="25px"></a>
@@ -164,6 +172,7 @@
         <a href="https://x.com/mdlz?lang=bn"><img src="img/x_icon.jpeg" alt="imagem X" width="25px" height="25px"></a>
     </section>
 </div>
+
 <footer>
     <h3>Contato e Suporte</h3>
 
@@ -180,5 +189,5 @@
     </ul>
 
 </footer>
-
+</body>
 </html>
