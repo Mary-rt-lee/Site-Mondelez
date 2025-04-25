@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="script.js"></script>
 </head>
 
 <!--Menu-->
@@ -76,8 +77,9 @@
                
                 
                     <!-- <form action="" method="get"> -->
-                        <label for="CPF">Número de CPF <span class="required">*</span></label>
-                        <input type="text" id="CPF" class="input" placeholder="000.000.000-00" maxlength="15"/>
+                        <label for="cpf">Número de CPF <span class="required">*</span></label>
+                        <input type="text" id="cpf" class="input" placeholder="000.000.000-00" maxlength="15" minlength="11"/>
+                        <p id="cpf-helper" class="helper-text"></p>
                     <p class="legenda">Preencha um CPF válido que corresponda ao nome
                             inserido anteriormente</p>
 <!-- </div>             -->
@@ -86,7 +88,7 @@
             <div class="pagamento"> -->
                 <h2>Forma de pagamento</h2>
                 <p>Cartão de crédito</p>
-                    <label for="CartCréd"></label>
+                    <label for="CartCréd"> </label>
                     <input type="radio" id="CartCréd" placeholder="Cartão de crédito">
               <div class="pagamentoimg">
                 <img src="img/mastercard_logo.jpeg" alt="mastercard logo" width="34px" height="23px">
@@ -104,7 +106,7 @@
 
                 
                         <label for="validade">Validade:</label>
-                        <select id="validade">
+                        <select id="validade-mes">
                             <option value="">Mê<s></s></option>
                             <option value="mês">Jan</option>
                             <option value="mês">Fev</option>
@@ -119,7 +121,7 @@
                             <option value="mês">Nov</option>
                             <option value="mês">Dez</option>
                         </select>
-                        <select id="validade">
+                        <select id="validade-ano">
                             <option value="">Ano</option>
                             <option value="ano">2026</option>
                             <option value="ano">2027</option>
@@ -135,7 +137,7 @@
                         </select>
  </div>
 <!-- </div>  -->
-        <!-- </section>  --> <img src="img/ChatGPT Image 20 de abr. de 2025, 16_59_03.png" alt="" id="banner" height="90%" width="60%">
+        <!-- </section>  --> <img src="img/ChatGPT Image 20 de abr. de 2025, 16_59_03.png" alt="" id="banner" height="100%" width="50%">
     </section>
      
  </main> 
