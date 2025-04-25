@@ -201,7 +201,7 @@
                         <h3 class="faq-question">Onde posso encontrar os produtos Mondelez?</h3>
                         <div class="faq-answer">
                             <p>Nossos produtos estão disponíveis em supermercados, lojas de conveniência e mercados em todo o Brasil. Você também pode encontrar alguns de nossos produtos em nossa loja online.</p>
-                            <p>Para encontrar o ponto de venda mais próximo de você, utilize nosso <a href="onde-comprar.html">localizador de lojas</a>.</p>
+                            <p>Para encontrar o ponto de venda mais próximo de você, utilize nosso localizador de lojas.</p>
                         </div>
                     </div>
                     
@@ -252,7 +252,7 @@
                     <div class="faq-item">
                         <h3 class="faq-question">Como faço para trabalhar na Mondelez?</h3>
                         <div class="faq-answer">
-                            <p>Todas as nossas vagas são divulgadas em nosso site oficial na seção <a href="trabalhe-conosco.html">"Trabalhe Conosco"</a>. Você também pode se cadastrar em nosso banco de talentos.</p>
+                            <p>Todas as nossas vagas são divulgadas em nosso site oficial na seção "Trabalhe Conosco". Você também pode se cadastrar em nosso banco de talentos.</p>
                             <p>Processo seletivo:</p>
                             <ol>
                                 <li>Cadastro no site ou envio de currículo</li>
@@ -279,16 +279,16 @@
             <h3>Siga-nos nas redes sociais</h3>
             <div class="social-links">
                 <a href="https://facebook.com/mondelez" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                    <img src="img/facebook_icon.jpeg" alt="Facebook" width="40" height="40" loading="lazy">
+                    <img src="img/facebook.png" alt="Facebook" width="40" height="40" loading="lazy">
                 </a>
                 <a href="https://instagram.com/mondelez" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                    <img src="img/instagram_icon.jpeg" alt="Instagram" width="40" height="40" loading="lazy">
+                    <img src="img/instagram.png" alt="Instagram" width="40" height="40" loading="lazy">
                 </a>
                 <a href="https://twitter.com/mondelez" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
-                    <img src="img/x_icon.jpeg" alt="X (Twitter)" width="40" height="40" loading="lazy">
+                    <img src="img/twitter.png" alt="X (Twitter)" width="40" height="40" loading="lazy">
                 </a>
                 <a href="https://linkedin.com/company/mondelez" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                    <img src="img/linkedin_icon.jpeg" alt="LinkedIn" width="40" height="40" loading="lazy">
+                    <img src="img/linkedin.png" alt="LinkedIn" width="40" height="40" loading="lazy">
                 </a>
             </div>
         </div>
@@ -319,131 +319,176 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize Swiper
-            const swiper = new Swiper('.swiper-container', {
-                loop: true,
-                autoplay: { 
-                    delay: 5000,
-                    disableOnInteraction: false
-                },
-                pagination: { 
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    dynamicBullets: true
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                a11y: {
-                    prevSlideMessage: 'Slide anterior',
-                    nextSlideMessage: 'Próximo slide',
-                    paginationBulletMessage: 'Ir para slide {{index}}',
-                }
-            });
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: { 
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            pagination: { 
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            a11y: {
+                prevSlideMessage: 'Slide anterior',
+                nextSlideMessage: 'Próximo slide',
+                paginationBulletMessage: 'Ir para slide {{index}}',
+            }
+        });
 
-            // FAQ Accordion Functionality
-            document.addEventListener('DOMContentLoaded', function() {
-                const faqItems = document.querySelectorAll('.faq-item');
-                
-                faqItems.forEach(item => {
-                    const question = item.querySelector('.faq-question');
-                    
-                    question.addEventListener('click', () => {
-                        // Close all other items
-                        faqItems.forEach(otherItem => {
-                            if (otherItem !== item) {
-                                otherItem.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current item
-                        item.classList.toggle('active');
-                    });
+        // FAQ Accordion Functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
                 });
+                
+                // Toggle current item
+                item.classList.toggle('active');
             });
-            
-            // Mobile menu toggle
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
+        });
+        
+        // Mobile menu toggle (se necessário - verifique se existe o elemento)
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        if (menuToggle) {
             const nav = document.querySelector('.nav');
-            
             menuToggle.addEventListener('click', function() {
                 const expanded = this.getAttribute('aria-expanded') === 'true';
                 this.setAttribute('aria-expanded', !expanded);
                 nav.classList.toggle('active');
             });
+        }
 
-            // Form validation
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
+        // Form validation functions
+        function showError(input, errorElement, message) {
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+            if (input) {
+                input.setAttribute('aria-invalid', 'true');
+                input.classList.add('error');
+            }
+        }
+
+        function clearError(input, errorElement) {
+            if (errorElement) {
+                errorElement.textContent = '';
+                errorElement.style.display = 'none';
+            }
+            if (input) {
+                input.removeAttribute('aria-invalid');
+                input.classList.remove('error');
+            }
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Form validation
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                // Validate required fields
+                const requiredFields = [
+                    { id: 'nome', minLength: 3, message: 'Por favor, insira seu nome completo' },
+                    { id: 'email', type: 'email', message: 'Por favor, insira um e-mail válido' },
+                    { id: 'mensagem', minLength: 10, message: 'Por favor, escreva uma mensagem mais detalhada (mínimo 10 caracteres)' }
+                ];
+                
+                requiredFields.forEach(field => {
+                    const input = document.getElementById(field.id);
+                    const errorElement = input.closest('.form-group').querySelector('.error-message');
                     
-                    let isValid = true;
-                    
-                    // Validate name
-                    const nameInput = document.getElementById('nome');
-                    if (nameInput.value.length < 3) {
-                        showError(nameInput, 'Por favor, insira seu nome completo');
+                    if (field.type === 'email' && !isValidEmail(input.value)) {
+                        showError(input, errorElement, field.message);
+                        isValid = false;
+                    } else if (field.minLength && input.value.length < field.minLength) {
+                        showError(input, errorElement, field.message);
+                        isValid = false;
+                    } else if (input.value.trim() === '') {
+                        showError(input, errorElement, 'Este campo é obrigatório');
                         isValid = false;
                     } else {
-                        clearError(nameInput);
-                    }
-                    
-                    // Validate email
-                    const emailInput = document.getElementById('email');
-                    if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
-                        showError(emailInput, 'Por favor, insira um e-mail válido');
-                        isValid = false;
-                    } else {
-                        clearError(emailInput);
-                    }
-                    
-                    // Validate message
-                    const messageInput = document.getElementById('mensagem');
-                    if (messageInput.value.length < 10) {
-                        showError(messageInput, 'Por favor, escreva uma mensagem mais detalhada');
-                        isValid = false;
-                    } else {
-                        clearError(messageInput);
-                    }
-                    
-                    // Validate consent checkbox
-                    const consentInput = document.getElementById('consentimento');
-                    if (!consentInput.checked) {
-                        showError(consentInput, 'Você deve concordar com a política de privacidade');
-                        isValid = false;
-                    } else {
-                        clearError(consentInput);
-                    }
-                    
-                    if (isValid) {
-                        // Form is valid, submit it (in a real scenario, you would send to server)
-                        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                        contactForm.reset();
+                        clearError(input, errorElement);
                     }
                 });
                 
-                function showError(input, message) {
-                    const formGroup = input.closest('.form-group');
-                    const errorElement = formGroup.querySelector('.error-message');
-                    errorElement.textContent = message;
-                    input.setAttribute('aria-invalid', 'true');
+                // Validate consent checkbox
+                const consentInput = document.getElementById('consentimento');
+                if (consentInput) {
+                    const consentError = consentInput.closest('.checkbox-group').querySelector('.error-message');
+                    if (!consentInput.checked) {
+                        showError(consentInput, consentError, 'Você deve concordar com a política de privacidade');
+                        isValid = false;
+                    } else {
+                        clearError(consentInput, consentError);
+                    }
                 }
                 
-                function clearError(input) {
-                    const formGroup = input.closest('.form-group');
-                    const errorElement = formGroup.querySelector('.error-message');
-                    errorElement.textContent = '';
-                    input.removeAttribute('aria-invalid');
+                if (isValid) {
+                    // Show loading state
+                    const submitBtn = contactForm.querySelector('.btn-submit');
+                    if (submitBtn) {
+                        submitBtn.classList.add('loading');
+                    }
+                    
+                    // Simulate form submission (replace with actual AJAX call)
+                    setTimeout(() => {
+                        if (submitBtn) {
+                            submitBtn.classList.remove('loading');
+                        }
+                        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                        contactForm.reset();
+                    }, 1500);
                 }
-            }
+            });
             
-            // Update current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-    </script>
+            // Add real-time validation on blur
+            const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    const errorElement = this.closest('.form-group').querySelector('.error-message');
+                    
+                    if (this.id === 'email' && this.value && !isValidEmail(this.value)) {
+                        showError(this, errorElement, 'Por favor, insira um e-mail válido');
+                    } else if (this.hasAttribute('minlength') && this.value.length < parseInt(this.getAttribute('minlength'))) {
+                        showError(this, errorElement, this.getAttribute('data-error') || 'Preencha este campo corretamente');
+                    } else if (this.required && this.value.trim() === '') {
+                        showError(this, errorElement, 'Este campo é obrigatório');
+                    } else {
+                        clearError(this, errorElement);
+                    }
+                });
+            });
+        }
+        
+        // Update current year in footer (se o elemento existir)
+        const currentYearElement = document.getElementById('current-year');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+    });
+</script>
 </body>
 </html>
