@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="style/style.css">
-    <script src="script.js"></script>
+    <script src="checkout.js"></script>
 </head>
 
 <!--Menu-->
@@ -39,46 +39,46 @@
 <div class="boxforms">
 <!-- <div > -->
    
-     <form action="" method="get">
+     <form action="" method="get" id="form" name="form">
                     <h2> Dados pessoais </h2>
-                    <label for="nome">Nome completo <span class="required">*</span></label>
-                    <input type="text" id="nome" class="input" placeholder="Seu nome completo" required />
-                    <label for="Ntelefone">Telefone <span class="required">*</span></label>
-                    <input type="tel" id="Ntelefone" class="input" placeholder="(00)00000-0000" required />
+                    <label for="nome" >Nome completo <span class="required">*</span></label>
+                    <input type="text" id="nome" name="nome" class="input" placeholder="Seu nome completo"/>
+                    <label for="telefone">Telefone <span class="required">*</span></label>
+                    <input type="tel" id="telefone" name="telefone" class="input" placeholder="(00)00000-0000"/>
                     <p class="legenda">É necessário um numero de telefone válido para entrega</p>
                 
-                        <label for="Localização">Localização:</label>
-                        <select id="Localização" placeholder="Localização*" required>
+                        <label for="Localizacao">Localização:</label>
+                        <select id="Localizacao" name="Localizacao" placeholder="Localização*">
                             <option value="">Selecione uma localização</option>
                             <option value="Brasil">Brasil</option>
                         </select>
                        
                             <label for="estado">Estado <span class="required">*</span></label>
-                            <input type="text" id="estado" placeholder="Ex: Pernambuco" class="input" required />
+                            <input type="text" id="estado" name="estado" placeholder="Ex: Pernambuco" class="input"/>
                      
            
               
                 
-                        <label for="cep-codpostal">CEP/Código Postal <span class="required">*</span></label>
-                        <input type="text" id="cep-codpostal" class="input" placeholder="00000-000" required/>
-                        <label for="endereço">Endereço <span class="required">*</span></label>
-                        <input type="text" id="endereço" class="input" placeholder="Informe seu endereço" required/>
+                        <label for="cep">CEP/Código Postal <span class="required">*</span></label>
+                        <input type="text" id="cep" name="cep" class="input" placeholder="00000-000" maxlength="9"/>
+                        <label for="endereco">Endereço <span class="required">*</span></label>
+                        <input type="text" id="endereco" name="endereco" class="input" placeholder="Informe seu endereço"/>
                
                 
                     <div class="inf-add">
-                        <label for="informadicionais">Informações adicionais</label>
-                        <input type="text" id="informadicionais" class="input" placeholder="Referências para entrega, horário de preferência para receber, detalhes complementares do endereço " />
+                        <label for="informacoes-adicionais">Informações adicionais</label>
+                        <input type="text" id="informacoes-adicionais" name="informacoes-adicionais" class="input" placeholder="Referências para entrega, horário de preferência para receber, detalhes complementares do endereço " />
                 </div>
                
               
-                        <label for="Bairro">Bairro <span class="required">*</span></label>
-                        <input type="text" id="Bairro" class="input" placeholder="Informe seu bairro" required/>
+                        <label for="bairro">Bairro <span class="required">*</span></label>
+                        <input type="text" id="bairro" name="bairro" class="input" placeholder="Informe seu bairro"/>
                 
                
                 
                     <!-- <form action="" method="get"> -->
                         <label for="cpf">Número de CPF <span class="required">*</span></label>
-                        <input type="text" id="cpf" class="input" placeholder="000.000.000-00" maxlength="15" minlength="11"/>
+                        <input type="text" id="cpf" name="cpf" class="input" placeholder="000.000.000-00" maxlength="14"/>
                         <p id="cpf-helper" class="helper-text"></p>
                     <p class="legenda">Preencha um CPF válido que corresponda ao nome
                             inserido anteriormente</p>
@@ -88,8 +88,8 @@
             <div class="pagamento"> -->
                 <h2>Forma de pagamento</h2>
                 <p>Cartão de crédito</p>
-                    <label for="CartCréd"> </label>
-                    <input type="radio" id="CartCréd" placeholder="Cartão de crédito">
+                    <label for="cartao-credito"> </label>
+                    <input type="radio" id="cartao-credito" name="cartao-credito" placeholder="Cartão de crédito">
               <div class="pagamentoimg">
                 <img src="img/mastercard_logo.jpeg" alt="mastercard logo" width="34px" height="23px">
                 <img src="img/pix_logo.jpeg" alt="pix logo" width="34px" height="23px">
@@ -99,15 +99,15 @@
                 <img src="img/elo_logo.jpeg" alt="elo logo" width="34px" height="23px">
             </div>
             
-                    <label for="Ncartão">Número do cartão</label>
-                    <input type="text" id="Ncartão" class="input" placeholder="0000 0000 0000 0000">
-                    <label for="codsegurança">Código de segurança</label>
-                    <input type="text" id="codsegurança" class="input" placeholder="000">
+                    <label for="numero-cartao">Número do cartão</label>
+                    <input type="text" id="numero-cartao" name="numero-cartao" class="input" placeholder="0000 0000 0000 0000" maxlength="19">
+                    <label for="codigo-segurança">Código de segurança</label>
+                    <input type="text" id="codigo-segurança" name="codigo-segurança" class="input" placeholder="000">
 
                 
-                        <label for="validade">Validade:</label>
-                        <select id="validade-mes">
-                            <option value="">Mê<s></s></option>
+                        <label for="validade-mes">Validade:</label>
+                        <select id="validade-mes" name="validade-mes" class="validade">
+                            <option value="">Mês<s></s></option>
                             <option value="mês">Jan</option>
                             <option value="mês">Fev</option>
                             <option value="mês">Mar</option>
@@ -121,7 +121,9 @@
                             <option value="mês">Nov</option>
                             <option value="mês">Dez</option>
                         </select>
-                        <select id="validade-ano">
+
+                        <label for="validade-ano"></label>
+                        <select id="validade-ano" class="validade">
                             <option value="">Ano</option>
                             <option value="ano">2026</option>
                             <option value="ano">2027</option>
@@ -191,5 +193,187 @@
     </ul>
 
 </footer>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById('form');
+    
+        function setError(input, message) {
+            let error = input.parentElement.querySelector('.error-message');
+            if (!error) {
+                error = document.createElement('small');
+                error.classList.add('error-message');
+                input.parentElement.appendChild(error);
+            }
+            error.textContent = message;
+            error.style.display = 'block';
+            input.classList.remove('input-success');
+            input.classList.add('input-error');
+        }
+    
+        function setSuccess(input) {
+            let error = input.parentElement.querySelector('.error-message');
+            if (error) {
+                error.textContent = "";
+                error.style.display = 'none';
+            }
+            input.classList.remove('input-error');
+            input.classList.add('input-success');
+        }
+    
+        function maskCPF(value) {
+            return value
+                .replace(/\D/g, '') // Remove não-dígitos
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        }
+    
+        function maskCEP(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{5})(\d)/, '$1-$2');
+        }
+    
+        function maskTelefone(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{2})(\d)/, '($1)$2')
+                .replace(/(\d{5})(\d)/, '$1-$2')
+                .replace(/(-\d{4})\d+?$/, '$1'); // Limita para 4 números no final
+        }
+
+        function maskCartao(value) {
+        return value
+            .replace(/\D/g, '') // Remove não-dígitos
+            .replace(/(\d{4})(\d)/, '$1 $2')
+            .replace(/(\d{4})(\d)/, '$1 $2')
+            .replace(/(\d{4})(\d)/, '$1 $2')
+            .replace(/(\d{4})(\d{1,4})$/, '$1 $2');
+    }
+    
+        const cpfInput = document.getElementById('cpf');
+        const cepInput = document.getElementById('cep');
+        const telefoneInput = document.getElementById('telefone');
+        const numeroCartaoInput = document.getElementById('numero-cartao');
+        const codigoSegurancaInput = document.getElementById('codigo-segurança');
+    
+        cpfInput.addEventListener('input', function () {
+            this.value = maskCPF(this.value);
+        });
+    
+        cepInput.addEventListener('input', function () {
+            this.value = maskCEP(this.value);
+        });
+    
+        telefoneInput.addEventListener('input', function () {
+            this.value = maskTelefone(this.value);
+        });
+
+        numeroCartaoInput.addEventListener('input', function () {
+        this.value = maskCartao(this.value);
+    });
+
+    codigoSegurancaInput.addEventListener('input', function () {
+        let value = this.value.replace(/\D/g, ''); // Remove não-dígitos
+        if (value.length > 3) {
+            value = value.substring(0, 3); // Limita para 3 dígitos
+        }
+        this.value = value;
+    });
+    
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let valid = true;
+    
+            const inputs = form.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.classList.remove('input-error', 'input-success');
+                const error = input.parentElement.querySelector('.error-message');
+                if (error) {
+                    error.textContent = "";
+                    error.style.display = 'none';
+                }
+            });
+    
+            // Validações dos campos
+            const nome = document.getElementById('nome');
+            if (nome.value.trim().length < 3) {
+                setError(nome, "Nome inválido (mínimo 3 caracteres).");
+                valid = false;
+            } else {
+                setSuccess(nome);
+            }
+    
+            if (!/^\(\d{2}\)\d{5}-\d{4}$/.test(telefoneInput.value.trim())) {
+                setError(telefoneInput, "Formato inválido. Ex: (00)00000-0000.");
+                valid = false;
+            } else {
+                setSuccess(telefoneInput);
+            }
+    
+            const estado = document.getElementById('estado');
+            if (estado.value.trim().length < 2) {
+                setError(estado, "Informe um estado válido.");
+                valid = false;
+            } else {
+                setSuccess(estado);
+            }
+    
+            if (!/^\d{5}-\d{3}$/.test(cepInput.value.trim())) {
+                setError(cepInput, "Formato inválido. Ex: 00000-000.");
+                valid = false;
+            } else {
+                setSuccess(cepInput);
+            }
+    
+            const endereco = document.getElementById('endereco');
+            if (endereco.value.trim() === "") {
+                setError(endereco, "Endereço é obrigatório.");
+                valid = false;
+            } else {
+                setSuccess(endereco);
+            }
+    
+            const bairro = document.getElementById('bairro');
+            if (bairro.value.trim() === "") {
+                setError(bairro, "Bairro é obrigatório.");
+                valid = false;
+            } else {
+                setSuccess(bairro);
+            }
+    
+            if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpfInput.value.trim())) {
+                setError(cpfInput, "Formato inválido. Ex: 000.000.000-00.");
+                valid = false;
+            } else {
+                setSuccess(cpfInput);
+            }
+    
+            if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(numeroCartaoInput.value.trim())) {
+            setError(numeroCartaoInput, "Número inválido. Ex: 0000 0000 0000 0000.");
+            valid = false;
+        } else {
+            setSuccess(numeroCartaoInput);
+        }
+
+        const codigoSeguranca = document.getElementById('codigo-segurança');
+        if (!/^\d{3}$/.test(codigoSeguranca.value.trim())) {
+            setError(codigoSeguranca, "Código inválido (3 dígitos).");
+            valid = false;
+        } else {
+            setSuccess(codigoSeguranca);
+        }
+    
+            if (valid) {
+                alert("Formulário enviado com sucesso!");
+                form.submit();
+            }
+        });
+    });
+    </script>
+    
+
+    
 </body>
 </html>
