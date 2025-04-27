@@ -94,47 +94,106 @@ nav ul li a:hover {
 
 
 footer {
-    background-color: #6049a6;
-    color: white;
-    padding: 20px;
+    background-color: var(--header-background-color);
+    color: var(--white);
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .support-container {
     display: flex;
     width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    gap: 60px;
+    margin: 0 auto;
 }
 
-.contact-support, .consumer-support {
-    width: 50%;
+.contact-support, 
+.consumer-support {
+    width: auto;
     margin: 0;
     padding: 0;
-}
-
-.consumer-support {
-    margin-left: -600px;
+    text-align: center;
 }
 
 footer h3 {
-    margin: 15px 0;
+    margin: 0 0 20px 0;
     font-size: 1.3em;
+    color: var(--white);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+footer h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--white);
 }
 
 footer .small-title {
-    font-size: 1.1em;
-    margin-bottom: 20px;
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: var(--white);
+    text-align: center;
+    width: 100%;
 }
 
 footer ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer ul li {
-    margin: 10px 0;
+    margin: 8px 0;
     font-size: 1em;
+}
+
+footer ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    display: inline-block;
+}
+
+footer ul li a:hover {
+    color: var(--gray-light);
+    transform: translateY(-2px);
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+footer{
+    color: white;
 }
 
 *{
@@ -361,4 +420,21 @@ select{
 
 .required{
     color: red;
+}
+
+.input-error {
+    border: 2px solid #e74c3c;
+    background-color: #fdecea;
+}
+
+.input-success {
+    border: 2px solid #2ecc71;
+    background-color: #ecf9f1;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 2px;
+    display: block;
 }
