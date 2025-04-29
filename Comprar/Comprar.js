@@ -12,7 +12,7 @@ const produtos = [
         sabores: ["leite", "avelã"]
     },
     {
-        nome: "Chocolate Stick Sonho De Valsa Caixa C/15unx25g.",
+        nome: "Chocolate Stick Sonho De Valsa Caixa 15/25g.",
         imagem: "Img/Chocolate Stick Sonho De Valsa.jpg",
         precoOriginal: 62.49,
         precoDesconto: 49.99,
