@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mondelez - Carrinho</title>
+    <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div id="logo">
+            <img src="/img/logomondelez-header.jpg.jpeg" alt="logo mondelez"> </div>
+        <nav>
+            <section>
+                <form>
+                    <div class="search-container">
+                        <input type="search" id="busca" name="busca" placeholder="Busque aqui seu produto:">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </section>
+            <ul>
+                <li><a href="">Loja</a></li>
+                <li><a href="Carrinho">Carrinho</a></li>
+                <li><a href="Sobre">Sobre nós</a></li>
+                <li><a href="Suporte">Suporte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="cart-page-container">
+            <section class="cart-items-section">
+                <div class="cart-header">
+                    <h2>Carrinho de compras</h2>
+                    <button class="btn-text btn-deselect-all" id="desmarcar-tudo">Desmarcar todos os itens</button>
+                </div>
+                <div class="cart-item-card">
+                    <img src="/img/caixa.webp" alt="Lacta Favoritos" class="product-image">
+                    <div class="item-details"> <p class="item-name"><strong>Lacta chocolate bombom caixa favoritos - 250 G.</strong></p> <div class="item-actions"> <button class="btn-text">Excluir</button> <button class="btn-text">Salvar</button> <a href="#" class="btn-text">Comprar agora</a> </div> </div> <div class="item-price-quantity"> <p class="item-price">R$ <span class="preco" data-preco="18.36">18,36</span></p> <div class="quantity-controls"> <button class="btn-quantity" onclick="decrementar('quantidade1')">-</button> <input type="number" id="quantidade1" value="1" min="1" onchange="atualizarResumo()"> <button class="btn-quantity" onclick="incrementar('quantidade1')">+</button> </div> </div>
+                </div>
+                <div class="cart-item-card">
+                    <img src="/img/sonhodevalsa.webp" alt="Sonho de Valsa Stick" class="product-image">
+                    <div class="item-details"> <p class="item-name"><strong>Chocolate Stick Sonho De Valsa Caixa C/15unx25g</strong></p> <div class="item-actions"> <button class="btn-text">Excluir</button> <button class="btn-text">Salvar</button> <a href="#" class="btn-text">Comprar agora</a> </div> </div> <div class="item-price-quantity"> <p class="item-price">R$ <span class="preco" data-preco="49.99">49,99</span></p> <div class="quantity-controls"> <button class="btn-quantity" onclick="decrementar('quantidade2')">-</button> <input type="number" id="quantidade2" value="1" min="1" onchange="atualizarResumo()"> <button class="btn-quantity" onclick="incrementar('quantidade2')">+</button> </div> </div>
+                </div>
+            </section>
+            <aside class="cart-summary-section">
+                <div class="summary-card">
+                    <h2>Resumo da compra</h2>
+                    <div class="summary-line"> <span>Produtos (<span id="totalItens">2</span>)</span> <span>R$ <span id="totalPreco">68,35</span></span> </div> <div class="summary-line"> <span>Frete</span> <span>R$ 0,00</span> </div> <div class="summary-total"> <span><strong>Total</strong></span> <span><strong>R$ <span id="totalFinal">68,35</span></strong></span> </div> <button class="btn-primary btn-finalize">Finalizar compra</button>
+                </div>
+            </aside>
+        </div>
+        <section class="recommendations-section">
+            <h2>Recomendações para você</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <img src="/img/chocolate.amaro.png" alt="Produto Recomendado 1">
+                    <p class="recommendation-description">DISPLAY CHOCOLATE LACTA AMARO 90G</p>
+                    <p class="recommendation-price">R$ 24,74</p>
+                    <button class="botao-carrinho" data-name="DISPLAY CHOCOLATE LACTA" data-price="24.74">Adicionar ao Carrinho</button>
+                </div>
+                
+                <div class="recommendation-card">
+                    <img src="/img/tablete.chocolate.png" alt="Produto Recomendado 2">
+                    <p class="recommendation-description">TABLETE CHOCOLATE LACTA AO LEITE</p>
+                    <p class="recommendation-price">R$ 43,90</p>
+                    <button class="add-to-cart-btn" data-name="TABLETE CHOCOLATE LACTA AO LEITE" data-price="43,90">Adicionar ao Carrinho</button>
+                </div>
+                
+                <div class="recommendation-card">
+                    <img src="/img/bis.png" alt="Produto 3">
+                    <p class="recommendation-description">BIS CHOCOLATE AO LEITE LACTA 100,8G</p>
+                    <p class="recommendation-price">R$ 9,99</p>
+                    <button class="add-to-cart-btn" data-name="BIS CHOCOLATE AO LEITE LACTA 100,8G" data-price="9,99">Adicionar ao Carrinho</button>
+                </div>
+                
+                <div class="recommendation-card">
+                    <img src="/img/ovo.lacta.png" alt="Produto 4">
+                    <p class="recommendation-description">OVO DE PÁSCOA AO LEITE LACTA 157G</p>
+                     <p class="recommendation-price">R$ 39,90</p>
+                     <button class="add-to-cart-btn" data-name="OVO DE PÁSCOA AO LEITE LACTA 157G" data-price="39,90">Adicionar ao Carrinho</button>
+                </div>
+                
+                <div class="recommendation-card">
+                    <img src="/img/shot.png" alt="Produto 5">
+                    <p class="recommendation-description">SHOT CHOCOLATE LACTA 80G C/17 - UNID</p>
+                     <p class="recommendation-price">R$ 39,90</p>
+                     <button class="add-to-cart-btn" data-name="SHOT CHOCOLATE LACTA 80G C/17 - UNID" data-price="39,90">Adicionar ao Carrinho</button>
+                </div>
+                
+                <div class="recommendation-card">
+                    <img src="/img/bombom.png" alt="Produto 6">
+                    <p class="recommendation-description">BOMBOM SONHO DE VALSA LACTA 1KG</p>
+                     <p class="recommendation-price">R$ 59,90</p>
+                     <button class="add-to-cart-btn" data-name="BOMBOM SONHO DE VALSA LACTA 1KG" data-price="59,90">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <section class="shipping-banner">
+         <div class="banner-container">
+             <i class="fas fa-truck banner-icon"></i>
+             <span><strong>FRETE GRÁTIS</strong> com<br>distribuidores da sua região</span>
+         </div>
+     </section>
+     <section class="social-icons-above-footer">
+        <a href="https://pt-br.facebook.com/mondelezinternational/photos" target="_blank">
+            <img src="/img/facebook.jpeg" alt="imagem Facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com/mondelez_international/" target="_blank">
+            <img src="/img/instagram.jpeg" alt="imagem Instagram" class="social-icon">
+        </a>
+        <a href="https://br.linkedin.com/company/mondelezinternational" target="_blank">
+            <img src="/img/linkedin.jpeg" alt="imagem Linkedin" class="social-icon">
+        </a>
+        <a href="https://x.com/mdlz?lang=bn" target="_blank">
+            <img src="/img/twitter.jpeg" alt="imagem X" class="social-icon">
+        </a>
+    </section>
+     <footer>
+        <div>  <h3 class="small-title">Contato e Suporte</h3>
+        </div>
+        <div class="support-container"> <div class="contact-support">
+                <h3>Formulário de Contato</h3>
+                <ul>
+                    <li>Telefone de Suporte</li>
+                    <li>E-mail e Atendimento</li>
+                </ul>
+            </div>
+            <div class="consumer-support">
+                <h3>Suporte ao Consumidor</h3>
+                <ul>
+                    <li>Dúvidas</li>
+                    <li>Sugestões</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="carrinho.js"></script>
+
+</body>
+</html>
