@@ -194,36 +194,22 @@
 
 </footer>
 <script>
-
     document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById('form');
     
-        function setError(input, message) {
-            let error = input.parentElement.querySelector('.error-message');
-            if (!error) {
-                error = document.createElement('small');
-                error.classList.add('error-message');
-                input.parentElement.appendChild(error);
-            }
-            error.textContent = message;
-            error.style.display = 'block';
+        function setError(input) {
             input.classList.remove('input-success');
             input.classList.add('input-error');
         }
     
         function setSuccess(input) {
-            let error = input.parentElement.querySelector('.error-message');
-            if (error) {
-                error.textContent = "";
-                error.style.display = 'none';
-            }
             input.classList.remove('input-error');
             input.classList.add('input-success');
         }
     
         function maskCPF(value) {
             return value
-                .replace(/\D/g, '') // Remove não-dígitos
+                .replace(/\D/g, '')
                 .replace(/(\d{3})(\d)/, '$1.$2')
                 .replace(/(\d{3})(\d)/, '$1.$2')
                 .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
@@ -240,17 +226,17 @@
                 .replace(/\D/g, '')
                 .replace(/(\d{2})(\d)/, '($1)$2')
                 .replace(/(\d{5})(\d)/, '$1-$2')
-                .replace(/(-\d{4})\d+?$/, '$1'); // Limita para 4 números no final
+                .replace(/(-\d{4})\d+?$/, '$1');
         }
-
+    
         function maskCartao(value) {
-        return value
-            .replace(/\D/g, '') // Remove não-dígitos
-            .replace(/(\d{4})(\d)/, '$1 $2')
-            .replace(/(\d{4})(\d)/, '$1 $2')
-            .replace(/(\d{4})(\d)/, '$1 $2')
-            .replace(/(\d{4})(\d{1,4})$/, '$1 $2');
-    }
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{4})(\d)/, '$1 $2')
+                .replace(/(\d{4})(\d)/, '$1 $2')
+                .replace(/(\d{4})(\d)/, '$1 $2')
+                .replace(/(\d{4})(\d{1,4})$/, '$1 $2');
+        }
     
         const cpfInput = document.getElementById('cpf');
         const cepInput = document.getElementById('cep');
@@ -269,18 +255,18 @@
         telefoneInput.addEventListener('input', function () {
             this.value = maskTelefone(this.value);
         });
-
+    
         numeroCartaoInput.addEventListener('input', function () {
-        this.value = maskCartao(this.value);
-    });
-
-    codigoSegurancaInput.addEventListener('input', function () {
-        let value = this.value.replace(/\D/g, ''); // Remove não-dígitos
-        if (value.length > 3) {
-            value = value.substring(0, 3); // Limita para 3 dígitos
-        }
-        this.value = value;
-    });
+            this.value = maskCartao(this.value);
+        });
+    
+        codigoSegurancaInput.addEventListener('input', function () {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length > 3) {
+                value = value.substring(0, 3);
+            }
+            this.value = value;
+        });
     
         form.addEventListener('submit', function (event) {
             event.preventDefault();
@@ -289,24 +275,18 @@
             const inputs = form.querySelectorAll('input, select');
             inputs.forEach(input => {
                 input.classList.remove('input-error', 'input-success');
-                const error = input.parentElement.querySelector('.error-message');
-                if (error) {
-                    error.textContent = "";
-                    error.style.display = 'none';
-                }
             });
     
-            // Validações dos campos
             const nome = document.getElementById('nome');
             if (nome.value.trim().length < 3) {
-                setError(nome, "Nome inválido (mínimo 3 caracteres).");
+                setError(nome);
                 valid = false;
             } else {
                 setSuccess(nome);
             }
     
             if (!/^\(\d{2}\)\d{5}-\d{4}$/.test(telefoneInput.value.trim())) {
-                setError(telefoneInput, "Formato inválido. Ex: (00)00000-0000.");
+                setError(telefoneInput);
                 valid = false;
             } else {
                 setSuccess(telefoneInput);
@@ -314,14 +294,14 @@
     
             const estado = document.getElementById('estado');
             if (estado.value.trim().length < 2) {
-                setError(estado, "Informe um estado válido.");
+                setError(estado);
                 valid = false;
             } else {
                 setSuccess(estado);
             }
     
             if (!/^\d{5}-\d{3}$/.test(cepInput.value.trim())) {
-                setError(cepInput, "Formato inválido. Ex: 00000-000.");
+                setError(cepInput);
                 valid = false;
             } else {
                 setSuccess(cepInput);
@@ -329,7 +309,7 @@
     
             const endereco = document.getElementById('endereco');
             if (endereco.value.trim() === "") {
-                setError(endereco, "Endereço é obrigatório.");
+                setError(endereco);
                 valid = false;
             } else {
                 setSuccess(endereco);
@@ -337,33 +317,32 @@
     
             const bairro = document.getElementById('bairro');
             if (bairro.value.trim() === "") {
-                setError(bairro, "Bairro é obrigatório.");
+                setError(bairro);
                 valid = false;
             } else {
                 setSuccess(bairro);
             }
     
             if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpfInput.value.trim())) {
-                setError(cpfInput, "Formato inválido. Ex: 000.000.000-00.");
+                setError(cpfInput);
                 valid = false;
             } else {
                 setSuccess(cpfInput);
             }
     
             if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(numeroCartaoInput.value.trim())) {
-            setError(numeroCartaoInput, "Número inválido. Ex: 0000 0000 0000 0000.");
-            valid = false;
-        } else {
-            setSuccess(numeroCartaoInput);
-        }
-
-        const codigoSeguranca = document.getElementById('codigo-segurança');
-        if (!/^\d{3}$/.test(codigoSeguranca.value.trim())) {
-            setError(codigoSeguranca, "Código inválido (3 dígitos).");
-            valid = false;
-        } else {
-            setSuccess(codigoSeguranca);
-        }
+                setError(numeroCartaoInput);
+                valid = false;
+            } else {
+                setSuccess(numeroCartaoInput);
+            }
+    
+            if (!/^\d{3}$/.test(codigoSegurancaInput.value.trim())) {
+                setError(codigoSegurancaInput);
+                valid = false;
+            } else {
+                setSuccess(codigoSegurancaInput);
+            }
     
             if (valid) {
                 alert("Formulário enviado com sucesso!");
@@ -372,7 +351,6 @@
         });
     });
     </script>
-    
 
     
 </body>

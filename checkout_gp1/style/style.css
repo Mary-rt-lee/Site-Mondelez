@@ -432,9 +432,4 @@ select{
     background-color: #ecf9f1;
 }
 
-.error-message {
-    color: #e74c3c;
-    font-size: 0.8rem;
-    margin-top: 2px;
-    display: block;
-}
+

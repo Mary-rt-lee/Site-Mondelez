@@ -6,6 +6,7 @@
     <title>Mondelez - Informações</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="Comprar.css">
+
 </head>
 <body>
     <header>
@@ -22,8 +23,8 @@
                 </form>
             </section>
             <ul>
-                <li><a href="Loja">Loja</a></li>
-                <li><a href="Carrinho">Carrinho</a></li>
+                <li><a href="/site-Mondelez-grupo1/Comprar/Comprar.html">Loja</a></li>
+                <li><a href="/site-Mondelez-grupo1/carrinho/carrinho.html">Carrinho</a></li>
                 <li><a href="Sobre">Sobre nós</a></li>
                 <li><a href="Suporte">Suporte</a></li>
             </ul>
@@ -42,7 +43,6 @@
                 <img src="Img/Clubsocial.png" alt="Imagem 3">
             </div>
         </div>
-        <!-- Controles do Carrossel -->
         <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
         <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
     </div>
@@ -67,6 +67,11 @@
             const newTransformValue = -currentIndex * 100; 
             carouselImages.style.transform = `translateX(${newTransformValue}%)`;
         }
+
+        // Rotação automática do carrossel a cada 3 segundos
+        setInterval(() => {
+            moveCarousel(1);
+        }, 3000);
     </script>
 
     <div class="dropdown-container">
@@ -122,7 +127,7 @@
                 estrelas: 4.5
             },
             {
-                nome: "Display Mini Oreo Chocolate C/ Recheio Baunilha 10unx35g",
+                nome: "Display Mini Oreo Chocolate C/Baunilha 10unx35g",
                 imagem: "Img/Display Mini Oreo Chocolate.jpg",
                 precoOriginal: 27.49,
                 precoDesconto: 24.74,
@@ -130,25 +135,52 @@
                 estrelas: 4
             },
             {
-                nome: "Chocolate Lacta Intense Amargo 70% Cacau Original 85g",
+                nome: "Chocolate Lacta Intense Amargo 70% Cacau 85g",
                 imagem: "Img/Chocolate Lacta Intense Amargo.jpg",
                 precoOriginal: 15.37,
                 precoDesconto: 9.99,
                 desconto: "35% OFF",
                 estrelas: 3.5
-            }
+            },
+            {
+                nome: "Ovo de Páscoa Lacta Favoritos 560g",
+                imagem: "Img/OVO-LACTA-FAVORITOS-560G.jpg",
+                precoOriginal: 98.31,
+                precoDesconto: 85.49,
+                desconto: "15% OFF",
+                estrelas: 3
+            },
+            {
+                nome: "Lacta - Chocolate Bis ao leite, 126g",
+                imagem: "Img/Bis.jpg",
+                precoOriginal: 16.90,
+                precoDesconto: 13.00,
+                desconto: "30% OFF",
+                estrelas: 4.5
+            },
+            {
+                nome: "Chocolate Sonho de Valsa Pacote 1Kg",
+                imagem: "Img/Chocolate Sonho de Valsa Pacote 1Kg.jpg",
+                precoOriginal: 75.90,
+                precoDesconto: 69.00,
+                desconto: "10% OFF",
+                estrelas: 4
+            },
+            {
+                nome: "Chocolate Ouro Branco Pacote 1Kg",
+                imagem: "Img/Chocolate Ouro Branco Pacote 1Kg.jpg",
+                precoOriginal: 59.88,
+                precoDesconto: 49.90,
+                desconto: "20% OFF",
+                estrelas: 4.5
+            },
         ];
-
-        const produtosRepetidos = [];
-        for (let i = 0; i < 5; i++) {
-            produtos.forEach(produto => {
-                produtosRepetidos.push(produto);
-            });
-        }
 
         function renderizarProdutos() {
             const container = document.querySelector('.product-container');
-            produtosRepetidos.forEach(produto => {
+            container.innerHTML = ''; // Limpa o container antes de renderizar
+            
+            produtos.forEach(produto => {
                 const card = document.createElement('div');
                 card.classList.add('product-card');
                 card.innerHTML = `
@@ -160,12 +192,63 @@
                     <p style="text-decoration: line-through;">R$${produto.precoOriginal.toFixed(2)}</p>
                     <p>R$${produto.precoDesconto.toFixed(2)}</p>
                     <div>
-                        <button><span>Comprar</span></button>
-                        <button><span>Carrinho</span> <i class="fa fa-shopping-cart"></i></button>
+                        <button onclick="adicionarAoCarrinho(${JSON.stringify(produto).replace(/"/g, '&quot;')})">
+                            <span>Carrinho</span> <i class="fa fa-shopping-cart"></i>
+                        </button>
                     </div>
                 `;
                 container.appendChild(card);
             });
+        }
+
+        function adicionarAoCarrinho(produto) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            
+            // Converte de volta para objeto se for string
+            if (typeof produto === 'string') {
+                produto = JSON.parse(produto.replace(/&quot;/g, '"'));
+            }
+            
+            carrinho.push(produto);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            
+            // Mostra notificação
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = '#4CAF50';
+            notification.style.color = 'white';
+            notification.style.padding = '15px';
+            notification.style.borderRadius = '5px';
+            notification.style.zIndex = '1000';
+            notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+            notification.innerHTML = `${produto.nome} foi adicionado ao carrinho!`;
+            
+            document.body.appendChild(notification);
+            
+            // Remove a notificação após 3 segundos
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 3000);
+        }
+
+        // Filtros de produtos
+        document.getElementById('marca').addEventListener('change', filtrarProdutos);
+        document.getElementById('tipo').addEventListener('change', filtrarProdutos);
+        document.getElementById('sabor').addEventListener('change', filtrarProdutos);
+
+        function filtrarProdutos() {
+            const marca = document.getElementById('marca').value;
+            const tipo = document.getElementById('tipo').value;
+            const sabor = document.getElementById('sabor').value;
+            
+            // Implemente a lógica de filtro conforme necessário
+            console.log(`Filtrando por: Marca=${marca}, Tipo=${tipo}, Sabor=${sabor}`);
+            // Aqui você pode adicionar a lógica para filtrar os produtos exibidos
         }
 
         document.addEventListener('DOMContentLoaded', renderizarProdutos);
