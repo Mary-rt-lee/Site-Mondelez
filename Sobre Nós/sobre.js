@@ -18,3 +18,42 @@ textoDiv.appendChild(h1);
 textoDiv.appendChild(p1);
 textoDiv.appendChild(h2);
 textoDiv.appendChild(p2);
+
+const footer = document.createElement('footer');
+
+const contatoDiv = document.createElement('div');
+const h3Contato = document.createElement('h3');
+h3Contato.className = 'small-title';
+h3Contato.textContent = 'Contato e Suporte';
+contatoDiv.appendChild(h3Contato);
+
+const supportContainer = document.createElement('div');
+supportContainer.className = 'support-container';
+
+const contactSupport = document.createElement('div');
+contactSupport.className = 'contact-support';
+const h3Form = document.createElement('h3');
+h3Form.textContent = 'Formulário de Contato';
+const ulContact = document.createElement('ul');
+ulContact.innerHTML = '<li>Telefone de Suporte</li><li>E-mail e Atendimento</li>';
+contactSupport.appendChild(h3Form);
+contactSupport.appendChild(ulContact);
+
+const consumerSupport = document.createElement('div');
+consumerSupport.className = 'consumer-support';
+const h3Consumer = document.createElement('h3');
+h3Consumer.textContent = 'Suporte ao Consumidor';
+const ulConsumer = document.createElement('ul');
+ulConsumer.innerHTML = '<li>Dúvidas</li><li>Sugestões</li>';
+consumerSupport.appendChild(h3Consumer);
+consumerSupport.appendChild(ulConsumer);
+
+supportContainer.appendChild(contactSupport);
+supportContainer.appendChild(consumerSupport);
+
+footer.appendChild(contatoDiv);
+footer.appendChild(supportContainer);
+
+document.body.appendChild(footer);
+
+
