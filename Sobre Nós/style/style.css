@@ -228,7 +228,6 @@ nav ul li a:hover {
 
 /* parte da cauda */
 .chocolatecauda{
-  position: relative;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
