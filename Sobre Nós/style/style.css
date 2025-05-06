@@ -189,14 +189,14 @@ nav ul li a:hover {
 .texto h1, .texto h2 {
   color: #6049a6;
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .texto p {
   font-size: 18px;
   line-height: 1.6;
   color: black;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
