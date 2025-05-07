@@ -180,7 +180,7 @@ nav ul li a:hover {
 
 .texto {
   position: absolute;
-  top: -400px;
+  top: -350px;
   flex: 2;
   max-width: 90%;
   font-family: Arial, sans-serif;
@@ -228,13 +228,12 @@ nav ul li a:hover {
 
 /* parte da cauda */
 .chocolatecauda{
-  margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  width: 100%;
-  height: 455px;
+ 
+ 
+  height: 400px;
+  background-image: url('../img/cauda\ de\ chocolate.png');
   opacity: 0.3;
-  object-fit: cover
+  object-fit: cover;
  }
 
 /* Imagens da página */
@@ -293,7 +292,6 @@ nav ul li a:hover {
 /* Redes Sociais */
 .redesocial {
   display: flex;
-  width: 100%;
   margin: 5;
   padding: 10px;
 
