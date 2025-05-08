@@ -222,6 +222,7 @@ nav ul li a:hover {
     display: flex;
     gap: 20px;
     margin: 40px 0;
+    padding: 15pxs;
   }
   
   .redes.sociais a img {
