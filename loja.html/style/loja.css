@@ -1,92 +1,280 @@
 :root {
-    --background-color: #ede9e9;
-    --header-background-color: #6049a6;
-    --dropdown-background-color: #6049a6;
-    --product-card-background-color: #d3d3d3;
-    --badge-background-color: #6049a6;
-    --text-color: white;
+  --background-color: #ede9e9;
+  --header-background-color: #6049a6;
+  --dropdown-background-color: #6049a6;
+  --product-card-background-color: #d3d3d3;
+  --badge-background-color: #6049a6;
+  --text-color: white;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-}
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
 
+}
 header {
-    background-color: var(--header-background-color);
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: var(--header-background-color);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #logo img {
-    height: 70px;
+  height: 70px;
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 nav section {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    margin-left: 20px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
 }
 
 nav form {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .search-container {
-    position: relative;
+  position: relative;
 }
 
 nav input[type="search"] {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    width: 400px;
-    padding-right: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 400px;
+  padding-right: 40px;
 }
 
 nav button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-    display: inline;
+  display: inline;
 }
 
 nav ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    margin: 0 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 10px;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
+/* Estilo do banner */
+#banner {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+    
+
+/* Estilo da seção com o formulário e avisos */
+.h4 {
+    background-color: #f2f2f2;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .h4 ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .h4 ul li {
+    background-color: #6A32A4;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 30px;
+    max-width: 240px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .h4 ul li:hover {
+    transform: scale(1.05);
+  }
+  
+  .h4 button {
+    background-color: #6A32A4;
+    color: white;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  .h4 button:hover {
+    background-color: #532887;
+    transform: scale(1.05);
+  }
+  
+  /* Seção de atendimento */
+  section {
+    border: 2px solid #6A32A4;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  section h3 {
+    color: #6A32A4;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .Atendimento p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .Atendimento p::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+  }
+  
+  /* Formas de pagamento */
+  .pagamento {
+    border: 2px solid #6A32A4;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .pagamento h3 {
+    color: #6A32A4;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .pagamento img {
+    max-height: 40px;
+    margin: 10px 10px 0 0;
+    vertical-align: middle;
+  }
+  
+  /* Redes sociais */
+  .redes.sociais {
+    display: flex;
+    gap: 20px;
+    margin: 40px 0;
+    padding: 15pxs;
+  }
+  
+  .redes.sociais a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .redes.sociais a img:hover {
+    transform: scale(1.1);
+  }
+  
+  footer {
+    background-color: var(--header-background-color);
+    color: var(--text-color);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  
+  .support-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+  }
+  
+  .contact-support, .consumer-support {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    margin: 0 20px;
+  }
+  
+  footer h3 {
+    margin: 15px 0;
+    font-size: 1.3em;
+  }
+  
+  footer .small-title {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin: 10px 0;
+    font-size: 1em;
+  }
