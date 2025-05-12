@@ -153,7 +153,6 @@ function adicionarProduto(nome, preco, imagem) {
                 <p class="item-name"><strong>${nome}</strong></p>
                 <div class="item-actions">
                     <button class="btn-text" onclick="removerItem(${carrinho.length})">Excluir</button>
-                    <button class="btn-text">Salvar</button>
                     <a href="#" class="btn-text">Comprar agora</a>
                 </div>
             </div>
@@ -238,7 +237,6 @@ function carregarCarrinho() {
                     <p class="item-name"><strong>${produtoPadronizado.nome}</strong></p>
                     <div class="item-actions">
                         <button class="btn-text" onclick="removerItem(${index})">Excluir</button>
-                        <button class="btn-text">Salvar</button>
                         <a href="#" class="btn-text">Comprar agora</a>
                     </div>
                 </div>
