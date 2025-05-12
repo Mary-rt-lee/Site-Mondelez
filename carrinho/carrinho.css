@@ -371,16 +371,15 @@ footer {
 .support-container {
     display: flex;
     width: 100%;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
 }
 
 .contact-support, .consumer-support {
-    width: 50%;
-    margin: 0;
-    padding: 0;
-}
-
-.consumer-support {
-    margin-left: -600px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    margin: 0 20px;
 }
 
 footer h3 {
