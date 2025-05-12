@@ -1,4 +1,3 @@
-//produtos
 const produtos = [
     {
         nome: "Lacta Chocolate bombom caixa favoritos - 250 G.",
@@ -90,12 +89,12 @@ const produtos = [
     }
 ];
 
-// Variáveis do carrossel
+
 let currentIndex = 0;
 const items = document.querySelectorAll('.carousel-item');
 const totalItems = items.length;
 
-// Inicialização da página
+
 document.addEventListener('DOMContentLoaded', () => {
     renderizarProdutos(produtos);
     
@@ -111,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
 });
 
-//filtrar produtos
 function filtrarProdutos() {
     const marcaSelecionada = document.getElementById('marca').value;
     const tipoSelecionado = document.getElementById('tipo').value;
@@ -128,7 +126,6 @@ function filtrarProdutos() {
     renderizarProdutos(produtosFiltrados);
 }
 
-//renderizar produtos
 function renderizarProdutos(produtosParaRenderizar) {
     const container = document.querySelector('.product-container');
     container.innerHTML = '';
@@ -143,7 +140,9 @@ function renderizarProdutos(produtosParaRenderizar) {
         card.classList.add('product-card');
         card.innerHTML = `
             <div class="discount-badge">${produto.desconto}</div>
-            <img src="${produto.imagem}" alt="${produto.nome}">
+            <div class="product-image-container">
+                <img src="${produto.imagem}" alt="${produto.nome}">
+            </div>
             <label><strong>(${produto.marca})</strong></label>
             <h3>${produto.nome}</h3>
             <p>${'★'.repeat(Math.floor(produto.estrelas))}${'☆'.repeat(5 - Math.floor(produto.estrelas))}</p>
@@ -159,7 +158,6 @@ function renderizarProdutos(produtosParaRenderizar) {
     });
 }
 
-//adicionar produto ao carrinho
 function adicionarAoCarrinho(produto) {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     
@@ -173,7 +171,6 @@ function adicionarAoCarrinho(produto) {
     mostrarNotificacao(`${produto.nome} foi adicionado ao carrinho!`);
 }
 
-//notificação
 function mostrarNotificacao(mensagem) {
     const notification = document.createElement('div');
     notification.style.position = 'fixed';
@@ -197,7 +194,6 @@ function mostrarNotificacao(mensagem) {
     }, 3000);
 }
 
-//carrossel
 function moveCarousel(direction) {
     currentIndex += direction;
     if (currentIndex < 0) {
