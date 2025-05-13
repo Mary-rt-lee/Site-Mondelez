@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../checkout/style/checkout.css">
+    <script src="checkout.js"></script>
+</head>
+
+<!--Menu-->
+<header>
+    <div id="logo">
+        <img src="https://media.discordapp.net/attachments/1339947239338152029/1371952016145780806/logo_png.png?ex=68250162&is=6823afe2&hm=63651e165f07c5294c28ebd7505c267e0265dd757d837a6cca29c5bb135f3339&=&format=webp&quality=lossless&width=1046&height=523" alt="logo mondelez" width="150px" height="20px">
+            </div>
+            <nav>
+                <section>
+                    <form>
+                        <div class="search-container">
+                            <input type="search" id="busca" name="busca" placeholder="Busque aqui seu produto:">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </section>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../Comprar/Comprar.html">Loja</a></li>
+                    <li><a href="../carrinho/carrinho.html">Carrinho</a></li>
+                    <li><a href="../Sobre-Nos/SobreNos.html">Sobre nós</a></li>
+                    <li><a href="../fale-conosco/faleconosco.html">Suporte</a></li>
+                </ul>
+            </nav>
+        </header>
+<!-- <div class="all"> -->
+    <body>
+        <main>
+             
+            <section class="input-dados">
+<div class="boxforms">
+<!-- <div > -->
+   
+     <form action="" method="get" id="form" name="form">
+                    <h2> Dados pessoais </h2>
+                    <label for="nome" >Nome completo <span class="required">*</span></label>
+                    <input type="text" id="nome" name="nome" class="input" placeholder="Seu nome completo"/>
+                    <label for="telefone">Telefone <span class="required">*</span></label>
+                    <input type="tel" id="telefone" name="telefone" class="input" placeholder="(00)00000-0000"/>
+                    <p class="legenda">É necessário um numero de telefone válido para entrega</p>
+                
+                        <label for="Localizacao">Localização:</label>
+                        <select id="Localizacao" name="Localizacao" placeholder="Localização*">
+                            <option value="">Selecione uma localização</option>
+                            <option value="Brasil">Brasil</option>
+                        </select>
+                       
+                            <label for="estado">Estado <span class="required">*</span></label>
+                            <input type="text" id="estado" name="estado" placeholder="Ex: Pernambuco" class="input"/>
+                     
+           
+              
+                
+                        <label for="cep">CEP/Código Postal <span class="required">*</span></label>
+                        <input type="text" id="cep" name="cep" class="input" placeholder="00000-000" maxlength="9"/>
+                        <label for="endereco">Endereço <span class="required">*</span></label>
+                        <input type="text" id="endereco" name="endereco" class="input" placeholder="Informe seu endereço"/>
+               
+                
+                    <div class="inf-add">
+                        <label for="informacoes-adicionais">Informações adicionais</label>
+                        <input type="text" id="informacoes-adicionais" name="informacoes-adicionais" class="input" placeholder="Referências para entrega, horário de preferência para receber, detalhes complementares do endereço " />
+                </div>
+               
+              
+                        <label for="bairro">Bairro <span class="required">*</span></label>
+                        <input type="text" id="bairro" name="bairro" class="input" placeholder="Informe seu bairro"/>
+                
+               
+                
+                    <!-- <form action="" method="get"> -->
+                        <label for="cpf">Número de CPF <span class="required">*</span></label>
+                        <input type="text" id="cpf" name="cpf" class="input" placeholder="000.000.000-00" maxlength="14"/>
+                        <p id="cpf-helper" class="helper-text"></p>
+                    <p class="legenda">Preencha um CPF válido que corresponda ao nome
+                            inserido anteriormente</p>
+<!-- </div>             -->
+           
+        <!-- <section>
+            <div class="pagamento"> -->
+                <h2>Forma de pagamento</h2>
+                <p>Cartão de crédito</p>
+                    <label for="cartao-credito"> </label>
+                    <input type="radio" id="cartao-credito" name="cartao-credito" placeholder="Cartão de crédito">
+              <div class="pagamentoimg">
+                <img src="img/mastercard_logo.jpeg" alt="mastercard logo" width="34px" height="23px">
+                <img src="img/pix_logo.jpeg" alt="pix logo" width="34px" height="23px">
+                <img src="img/visa_logo.jpeg" alt="visa logo" width="34px" height="23px">
+                <img src="img/santander_logo.jpeg" alt="santander logo" width="34px" height="23px">
+                <img src="img/boleto.jpeg" alt="boleto logo" width="34px" height="23px">
+                <img src="img/elo_logo.jpeg" alt="elo logo" width="34px" height="23px">
+            </div>
+            
+                    <label for="numero-cartao">Número do cartão</label>
+                    <input type="text" id="numero-cartao" name="numero-cartao" class="input" placeholder="0000 0000 0000 0000" maxlength="19">
+                    <label for="codigo-segurança">Código de segurança</label>
+                    <input type="text" id="codigo-segurança" name="codigo-segurança" class="input" placeholder="000">
+
+                
+                        <label for="validade-mes">Validade:</label>
+                        <select id="validade-mes" name="validade-mes" class="validade">
+                            <option value="">Mês<s></s></option>
+                            <option value="mês">Jan</option>
+                            <option value="mês">Fev</option>
+                            <option value="mês">Mar</option>
+                            <option value="mês">Abr</option>
+                            <option value="mês">Mai</option>
+                            <option value="mês">Jun</option>
+                            <option value="mês">Jul</option>
+                            <option value="mês">Ago</option>
+                            <option value="mês">Set</option>
+                            <option value="mês">Out</option>
+                            <option value="mês">Nov</option>
+                            <option value="mês">Dez</option>
+                        </select>
+
+                        <label for="validade-ano"></label>
+                        <select id="validade-ano" class="validade">
+                            <option value="">Ano</option>
+                            <option value="ano">2026</option>
+                            <option value="ano">2027</option>
+                            <option value="ano">2028</option>
+                            <option value="ano">2029</option>
+                        </select>
+                
+                        <label for="Nparcelas">Números de parcelas:</label>
+                        <select id="Nparcelas">
+                            <option value="Nparcelas">Á vista - R$0,00</option>
+                            <option value="Nparcelas">2 vezez - R$x,xx</option>
+                            <option value="Nparcelas">10 vezes - R$x,xx</option>
+                        </select>
+ </div>
+<!-- </div>  -->
+        <!-- </section>  --> <img src="img/ChatGPT Image 20 de abr. de 2025, 16_59_03.png" alt="" id="banner" height="100%" width="50%">
+    </section>
+     
+ </main> 
+       
+        
+        
+                 <div class="btn">
+                <input class="btn" type="submit" value="Finalizar compra" />
+   </form>
+            
+      
+         </div> 
+           
+        
+    
+
+    <section>
+        <a href="https://pt-br.facebook.com/mondelezinternational/photos"><img src="img/facebook_icon.jpeg" alt="imagem Facebook" width="25px" height="25px"></a>
+        <a href="https://www.instagram.com/mondelez_international/"><img src="img/instagram_icon.jpeg" alt="imagem Instagram" width="25px" height="25px"></a>
+        <a href="https://br.linkedin.com/company/mondelezinternational"><img src="img/linkedin_icon.jpeg" alt="imagem Linkedin" width="25px" height="25px"></a>
+        <a href="https://x.com/mdlz?lang=bn"><img src="img/x_icon.jpeg" alt="imagem X" width="25px" height="25px"></a>
+    </section>
+</div>
+
+<footer>
+        <div>
+            <h3 class="small-title">Contato e Suporte</h3>
+        </div>  
+        <div class="support-container"> 
+            <div class="contact-support">
+                <h3>Formulário de Contato</h3>
+                <ul>
+                    <li>Telefone de Suporte</li>
+                    <li>E-mail e Atendimento</li>
+                </ul>
+            </div>
+            <div class="consumer-support">
+                <h3>Suporte ao Consumidor</h3>
+                <ul>
+                    <li>Dúvidas</li>
+                    <li>Sugestões</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById('form');
+    
+        function setError(input) {
+            input.classList.remove('input-success');
+            input.classList.add('input-error');
+        }
+    
+        function setSuccess(input) {
+            input.classList.remove('input-error');
+            input.classList.add('input-success');
+        }
+    
+        function maskCPF(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        }
+    
+        function maskCEP(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{5})(\d)/, '$1-$2');
+        }
+    
+        function maskTelefone(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{2})(\d)/, '($1)$2')
+                .replace(/(\d{5})(\d)/, '$1-$2')
+                .replace(/(-\d{4})\d+?$/, '$1');
+        }
+    
+        function maskCartao(value) {
+            return value
+                .replace(/\D/g, '')
+                .replace(/(\d{4})(\d)/, '$1 $2')
+                .replace(/(\d{4})(\d)/, '$1 $2')
+                .replace(/(\d{4})(\d)/, '$1 $2')
+                .replace(/(\d{4})(\d{1,4})$/, '$1 $2');
+        }
+    
+        const cpfInput = document.getElementById('cpf');
+        const cepInput = document.getElementById('cep');
+        const telefoneInput = document.getElementById('telefone');
+        const numeroCartaoInput = document.getElementById('numero-cartao');
+        const codigoSegurancaInput = document.getElementById('codigo-segurança');
+    
+        cpfInput.addEventListener('input', function () {
+            this.value = maskCPF(this.value);
+        });
+    
+        cepInput.addEventListener('input', function () {
+            this.value = maskCEP(this.value);
+        });
+    
+        telefoneInput.addEventListener('input', function () {
+            this.value = maskTelefone(this.value);
+        });
+    
+        numeroCartaoInput.addEventListener('input', function () {
+            this.value = maskCartao(this.value);
+        });
+    
+        codigoSegurancaInput.addEventListener('input', function () {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length > 3) {
+                value = value.substring(0, 3);
+            }
+            this.value = value;
+        });
+    
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let valid = true;
+    
+            const inputs = form.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.classList.remove('input-error', 'input-success');
+            });
+    
+            const nome = document.getElementById('nome');
+            if (nome.value.trim().length < 3) {
+                setError(nome);
+                valid = false;
+            } else {
+                setSuccess(nome);
+            }
+    
+            if (!/^\(\d{2}\)\d{5}-\d{4}$/.test(telefoneInput.value.trim())) {
+                setError(telefoneInput);
+                valid = false;
+            } else {
+                setSuccess(telefoneInput);
+            }
+    
+            const estado = document.getElementById('estado');
+            if (estado.value.trim().length < 2) {
+                setError(estado);
+                valid = false;
+            } else {
+                setSuccess(estado);
+            }
+    
+            if (!/^\d{5}-\d{3}$/.test(cepInput.value.trim())) {
+                setError(cepInput);
+                valid = false;
+            } else {
+                setSuccess(cepInput);
+            }
+    
+            const endereco = document.getElementById('endereco');
+            if (endereco.value.trim() === "") {
+                setError(endereco);
+                valid = false;
+            } else {
+                setSuccess(endereco);
+            }
+    
+            const bairro = document.getElementById('bairro');
+            if (bairro.value.trim() === "") {
+                setError(bairro);
+                valid = false;
+            } else {
+                setSuccess(bairro);
+            }
+    
+            if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpfInput.value.trim())) {
+                setError(cpfInput);
+                valid = false;
+            } else {
+                setSuccess(cpfInput);
+            }
+    
+            if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(numeroCartaoInput.value.trim())) {
+                setError(numeroCartaoInput);
+                valid = false;
+            } else {
+                setSuccess(numeroCartaoInput);
+            }
+    
+            if (!/^\d{3}$/.test(codigoSegurancaInput.value.trim())) {
+                setError(codigoSegurancaInput);
+                valid = false;
+            } else {
+                setSuccess(codigoSegurancaInput);
+            }
+    
+            if (valid) {
+                alert("Formulário enviado com sucesso!");
+                form.submit();
+            }
+        });
+    });
+    </script>
+
+    
+</body>
+</html>
