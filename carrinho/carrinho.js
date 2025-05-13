@@ -1,12 +1,9 @@
-// Increment quantity
 function incrementar(id) {
     const input = document.getElementById(id);
     input.value = parseInt(input.value) + 1;
     atualizarResumo();
     atualizarCarrinhoLocalStorage();
 }
-
-// Decrement quantity
 function decrementar(id) {
     const input = document.getElementById(id);
     if (parseInt(input.value) > 1) {
@@ -16,7 +13,6 @@ function decrementar(id) {
     }
 }
 
-// Update summary
 function atualizarResumo() {
     let totalItens = 0;
     let totalPreco = 0;
@@ -43,7 +39,6 @@ function atualizarResumo() {
     verificarCarrinhoVazio();
 }
 
-// Check if cart is empty
 function verificarCarrinhoVazio() {
     const produtos = document.querySelectorAll('.cart-item-card');
     const carrinhoSection = document.querySelector('.cart-items-section');
@@ -58,7 +53,6 @@ function verificarCarrinhoVazio() {
                     <div class="emoji-vazio">😔</div>
                     <p class="texto-vazio">Seu carrinho está vazio<br>Que tal adicionar alguns produtos incríveis?</p>
                     <a href="../Comprar/Comprar.html" class="btn-continuar-comprando">Continuar Comprando</a>
-
                 </div>
             `;
             carrinhoSection.appendChild(mensagemVazio);
@@ -70,7 +64,6 @@ function verificarCarrinhoVazio() {
     }
 }
 
-// Remove item from cart
 function removerItem(index) {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     const item = document.querySelectorAll('.cart-item-card')[index];
@@ -85,7 +78,6 @@ function removerItem(index) {
     }, 500);
 }
 
-// Clear entire cart
 function limparCarrinho() {
     document.querySelectorAll('.cart-item-card').forEach(item => {
         item.classList.add('fade-out');
@@ -154,7 +146,7 @@ function adicionarProduto(nome, preco, imagem) {
                 <p class="item-name"><strong>${nome}</strong></p>
                 <div class="item-actions">
                     <button class="btn-text" onclick="removerItem(${carrinho.length})">Excluir</button>
-                    <a href="#" class="btn-text">Comprar agora</a>
+                    <a href="../checkout/checkout.html" class="btn-text">Comprar agora</a>
                 </div>
             </div>
             <div class="item-price-quantity">
@@ -168,7 +160,6 @@ function adicionarProduto(nome, preco, imagem) {
         `;
         cartItems.appendChild(card);
         
-        // Add to localStorage
         carrinho.push({
             nome: nome,
             imagem: imagem,
@@ -207,14 +198,13 @@ function configurarBotaoFinalizar() {
 
             if (carrinho.length === 0) {
                 alert("Seu carrinho está vazio! Adicione produtos antes de finalizar a compra.");
-                return; // cancela o redirecionamento
+                return; 
             }
 
-            window.location.href = "../checkout_gp1/finalizacaodecompra.html";
+            window.location.href = "../checkout/checkout.html";
         });
     }
 }
-
 
 function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -244,7 +234,7 @@ function carregarCarrinho() {
                     <p class="item-name"><strong>${produtoPadronizado.nome}</strong></p>
                     <div class="item-actions">
                         <button class="btn-text" onclick="removerItem(${index})">Excluir</button>
-                        <a href="../checkout_gp1/finalizacaodecompra.html" class="btn-text">Comprar agora</a>
+                        <a href="../checkout/checkout.html" class="btn-text">Comprar agora</a>
                     </div>
                 </div>
                 <div class="item-price-quantity">
