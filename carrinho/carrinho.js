@@ -57,7 +57,8 @@ function verificarCarrinhoVazio() {
                 <div class="vazio-conteudo">
                     <div class="emoji-vazio">😔</div>
                     <p class="texto-vazio">Seu carrinho está vazio<br>Que tal adicionar alguns produtos incríveis?</p>
-                    <a href="Loja" class="btn-continuar-comprando">Continuar Comprando</a>
+                    <a href="../Comprar/Comprar.html" class="btn-continuar-comprando">Continuar Comprando</a>
+
                 </div>
             `;
             carrinhoSection.appendChild(mensagemVazio);
@@ -202,12 +203,18 @@ function configurarBotaoFinalizar() {
     const botaoFinalizar = document.querySelector('.btn-finalize');
     if (botaoFinalizar) {
         botaoFinalizar.addEventListener('click', () => {
-            alert('Compra finalizada com sucesso!');
-            localStorage.removeItem('carrinho');
-            location.reload();
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio! Adicione produtos antes de finalizar a compra.");
+                return; // cancela o redirecionamento
+            }
+
+            window.location.href = "../checkout_gp1/finalizacaodecompra.html";
         });
     }
 }
+
 
 function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -237,7 +244,7 @@ function carregarCarrinho() {
                     <p class="item-name"><strong>${produtoPadronizado.nome}</strong></p>
                     <div class="item-actions">
                         <button class="btn-text" onclick="removerItem(${index})">Excluir</button>
-                        <a href="#" class="btn-text">Comprar agora</a>
+                        <a href="../checkout_gp1/finalizacaodecompra.html" class="btn-text">Comprar agora</a>
                     </div>
                 </div>
                 <div class="item-price-quantity">

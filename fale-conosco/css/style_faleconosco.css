@@ -633,36 +633,30 @@ nav ul li a:hover {
    ========================================================================== */
 footer {
     background-color: var(--header-background-color);
-    color: var(--white);
-    padding: 40px 20px;
-    /* display: flex;*/
-    /*flex-direction: column;*/
-    /*align-items: flex-start;*/
-    text-align: left;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .support-container {
     display: flex;
     width: 100%;
-    max-width: 1200px;
     justify-content: flex-start;
-    gap: 60px;
-    margin: -100 auto;
-    padding-left: 20px;
+    flex-wrap: wrap;
 }
 
-.contact-support, 
-.consumer-support {
-    text-align: left;
+.contact-support, .consumer-support {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    margin: 0 20px;
 }
 
 footer h3 {
-    margin: 0 0 20px 0;
+    margin: 15px 0;
     font-size: 1.3em;
-    color: var(--white);
-    position: relative;
-    padding-bottom: 10px;
-    text-align: left;
 }
 
 footer h3::after {
@@ -677,27 +671,19 @@ footer h3::after {
 }
 
 footer .small-title {
-    font-size: 1.4em;
-    margin-bottom: 30px;
-    color: var(--white);
-    text-align: left;
-    width: 100%;
+    font-size: 1.1em;
+    margin-bottom: 20px;
 }
 
 footer ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 footer ul li {
-    margin: 8px 0;
+    margin: 10px 0;
     font-size: 1em;
 }
-
 footer ul li a {
     color: var(--white);
     text-decoration: none;
@@ -706,10 +692,6 @@ footer ul li a {
     padding-left: 0;
 }
 
-footer ul li a:hover {
-    color: var(--gray-light);
-    transform: translateY(-2px);
-}
 
 .social-container {
     display: flex;

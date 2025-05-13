@@ -153,11 +153,11 @@
                 <h4>subtotal</h4>
                 <h4>frete</h4>
             </div>
-              </div> 
-                <div class="text"> 
-                <h3>Itens do pedido</h3>
-                <p>sem itens no momento</p>
-                </div> 
+              <div class="text"> 
+    <h3>Itens do pedido</h3>
+    <ul id="lista-itens-pedido"></ul>
+            </div>
+
                  <div class="btn">
                 <input class="btn" type="submit" value="Finalizar compra" />
    </form>
@@ -352,6 +352,61 @@
     });
     </script>
 
-    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    const lista = document.getElementById("lista-itens-pedido");
+
+    if (!lista) return;
+
+    lista.innerHTML = "";
+
+    if (carrinho.length === 0) {
+        lista.innerHTML = "<li>Seu carrinho está vazio.</li>";
+        return;
+    }
+
+    let totalGeral = 0;
+    let totalItens = 0;
+
+    carrinho.forEach(item => {
+        const nome = item.nome || "Produto sem nome";
+        const quantidade = item.quantidade || 1;
+        const preco = parseFloat(item.precoDesconto || 0);
+        let imagem = item.imagem || "img/sem-imagem.jpg";
+
+        // Corrige o caminho da imagem se estiver salvo como relativo ao carrinho ou raiz
+        if (!imagem.startsWith("http") && !imagem.startsWith("../") && (imagem.includes("Img/") || imagem.includes("img/"))) {
+            imagem = "../" + imagem;
+        }
+
+        const totalItem = preco * quantidade;
+        totalGeral += totalItem;
+        totalItens += quantidade;
+
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <img src="${imagem}" alt="${nome}" style="width: 50px; height: 50px; object-fit: contain; border: 1px solid #ccc; border-radius: 4px;">
+                <div>
+                    <strong>${quantidade}x</strong> ${nome}<br>
+                    <span style="color:#333">R$ ${totalItem.toFixed(2).replace('.', ',')}</span>
+                </div>
+            </div>
+        `;
+        lista.appendChild(li);
+    });
+
+    const resumo = document.createElement("li");
+    resumo.innerHTML = `
+        <hr style="margin: 10px 0;">
+        <p><strong>Total de itens:</strong> ${totalItens}</p>
+        <p><strong>Subtotal:</strong> R$ ${totalGeral.toFixed(2).replace('.', ',')}</p>
+        <p><strong>Frete:</strong> Grátis</p>
+    `;
+    lista.appendChild(resumo);
+});
+</script>
+
 </body>
 </html>
