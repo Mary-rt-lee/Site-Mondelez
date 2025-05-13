@@ -281,10 +281,8 @@ nav ul li a:hover {
 }
 .recommendations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 20px;
-    justify-content: center;
-    align-items: start;
 }
 
 .recommendation-card {
@@ -371,16 +369,15 @@ footer {
 .support-container {
     display: flex;
     width: 100%;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
 }
 
 .contact-support, .consumer-support {
-    width: 50%;
-    margin: 0;
-    padding: 0;
-}
-
-.consumer-support {
-    margin-left: -600px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    margin: 0 20px;
 }
 
 footer h3 {
