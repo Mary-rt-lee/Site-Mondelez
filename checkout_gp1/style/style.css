@@ -451,3 +451,131 @@ select{
     border-radius: 5px;
 }
 
+.itenspedido {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 300px; /* Altura mínima */
+    max-height: 600px; /* Altura máxima com scroll */
+    overflow-y: auto; /* Adiciona scroll vertical se necessário */
+}
+
+.itenspedido .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin-bottom: 15px;
+}
+
+.itenspedido .totaldeitens {
+    margin: 15px 0;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.itenspedido .totaldeitens h4 {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.itenspedido h3 {
+    margin: 10px 0;
+    color: #6049a6;
+    align-self: flex-start;
+}
+
+.itenspedido h2 {
+    color: #6049a6;
+    margin-bottom: 15px;
+}
+
+#lista-itens-pedido {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#lista-itens-pedido li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#lista-itens-pedido li:last-child {
+    border-bottom: none;
+}
+
+.item-pedido {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.item-pedido img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-info strong {
+    color: #6049a6;
+}
+
+.resumo-total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.resumo-total p {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn input {
+    background-color: #6049a6;
+    color: white;
+    border-radius: 10px;
+    width: 250px;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn input:hover {
+    background-color: #4d3a85;
+}
+
+.resumo-pedido {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+  color: #6049a6;
+}
