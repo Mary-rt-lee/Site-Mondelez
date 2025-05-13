@@ -206,6 +206,7 @@ nav ul li a:hover {
     border-color: #6049a6;
     box-shadow: 0 0 15px rgba(96, 73, 166, 0.5);
     z-index: 10;
+    cursor: pointer;
 }
 
 .product-image-container {
@@ -323,4 +324,5 @@ footer ul li {
 
 .social-icon:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
