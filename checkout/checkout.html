@@ -11,7 +11,7 @@
 <!--Menu-->
 <header>
     <div id="logo">
-            <a href="../index.html"> <img src="site-Mondelez-grupo1/checkout_gp1/img/logotranspmondelez.png" alt="logo mondelez"></a>
+            <a href="../index.html"> <img src="img/logomondelez-header.jpg.jpeg" alt="logo mondelez"></a>
         </div>
             <nav>
                 <section>
@@ -354,6 +354,7 @@
             });
 
             // Carregar itens do carrinho
+// Carregar itens do carrinho
             const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
             const lista = document.getElementById("lista-itens-pedido");
             const totalItensSpan = document.getElementById("total-itens");
@@ -379,10 +380,16 @@
                 const preco = parseFloat(item.precoDesconto || 0);
                 let imagem = item.imagem || "img/sem-imagem.jpg";
 
-                // Corrige o caminho da imagem
-                if (!imagem.startsWith("http") && !imagem.startsWith("../") && (imagem.includes("Img/") || imagem.includes("img/"))) {
-                    imagem = "../" + imagem;
-                }
+// Se imagem for URL completa (ex: http://localhost:5500/...), usa direto
+if (imagem.startsWith("http")) {
+    // mantém
+} else if (imagem.startsWith("Img/") || imagem.startsWith("img/")) {
+    // usa imagem da pasta carrinho
+    imagem = "../carrinho/" + imagem;
+} else if (!imagem.startsWith("../")) {
+    // fallback se não começar com http, Img ou ../
+    imagem = "../" + imagem;
+}
 
                 const totalItem = preco * quantidade;
                 totalGeral += totalItem;
