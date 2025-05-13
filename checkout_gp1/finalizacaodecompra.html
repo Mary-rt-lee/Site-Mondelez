@@ -143,28 +143,27 @@
     </section>
      
  </main> 
-       
+       <div class="resumo-pedido"><h2>Resumo do pedido</h2></div>
         <section class="itenspedido">
-             <div class="text">  
-                <h2>Resumo do pedido</h2>
-            </div>  
-            <div class="totaldeitens"> 
-                <h4>total de itens</h4>
-                <h4>subtotal</h4>
-                <h4>frete</h4>
-            </div>
-              <div class="text"> 
-    <h3>Itens do pedido</h3>
-    <ul id="lista-itens-pedido"></ul>
-            </div>
-
-                 <div class="btn">
-                <input class="btn" type="submit" value="Finalizar compra" />
-   </form>
-        </section>
-            
-      
-         </div> 
+    <div class="text">  
+        <h2>Resumo do pedido</h2>
+    </div>
+    
+    <div class="text"> 
+        <h3>Itens do pedido</h3>
+        <ul id="lista-itens-pedido"></ul>
+    </div>
+    
+    <div class="totaldeitens">
+        <h4><span>Total de itens:</span> <span id="total-itens">0</span></h4>
+        <h4><span>Subtotal:</span> <span id="subtotal">R$ 0,00</span></h4>
+        <h4><span>Frete:</span> <span id="frete">Grátis</span></h4>
+    </div>
+    
+    <div class="btn">
+        <input class="btn" type="submit" value="Finalizar compra" form="form" />
+    </div>
+</section>
            
         
     
@@ -194,219 +193,219 @@
 
 </footer>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById('form');
-    
-        function setError(input) {
-            input.classList.remove('input-success');
-            input.classList.add('input-error');
-        }
-    
-        function setSuccess(input) {
-            input.classList.remove('input-error');
-            input.classList.add('input-success');
-        }
-    
-        function maskCPF(value) {
-            return value
-                .replace(/\D/g, '')
-                .replace(/(\d{3})(\d)/, '$1.$2')
-                .replace(/(\d{3})(\d)/, '$1.$2')
-                .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-        }
-    
-        function maskCEP(value) {
-            return value
-                .replace(/\D/g, '')
-                .replace(/(\d{5})(\d)/, '$1-$2');
-        }
-    
-        function maskTelefone(value) {
-            return value
-                .replace(/\D/g, '')
-                .replace(/(\d{2})(\d)/, '($1)$2')
-                .replace(/(\d{5})(\d)/, '$1-$2')
-                .replace(/(-\d{4})\d+?$/, '$1');
-        }
-    
-        function maskCartao(value) {
-            return value
-                .replace(/\D/g, '')
-                .replace(/(\d{4})(\d)/, '$1 $2')
-                .replace(/(\d{4})(\d)/, '$1 $2')
-                .replace(/(\d{4})(\d)/, '$1 $2')
-                .replace(/(\d{4})(\d{1,4})$/, '$1 $2');
-        }
-    
-        const cpfInput = document.getElementById('cpf');
-        const cepInput = document.getElementById('cep');
-        const telefoneInput = document.getElementById('telefone');
-        const numeroCartaoInput = document.getElementById('numero-cartao');
-        const codigoSegurancaInput = document.getElementById('codigo-segurança');
-    
-        cpfInput.addEventListener('input', function () {
-            this.value = maskCPF(this.value);
-        });
-    
-        cepInput.addEventListener('input', function () {
-            this.value = maskCEP(this.value);
-        });
-    
-        telefoneInput.addEventListener('input', function () {
-            this.value = maskTelefone(this.value);
-        });
-    
-        numeroCartaoInput.addEventListener('input', function () {
-            this.value = maskCartao(this.value);
-        });
-    
-        codigoSegurancaInput.addEventListener('input', function () {
-            let value = this.value.replace(/\D/g, '');
-            if (value.length > 3) {
-                value = value.substring(0, 3);
+        document.addEventListener("DOMContentLoaded", function () {
+            // Máscaras para os campos
+            function maskCPF(value) {
+                return value
+                    .replace(/\D/g, '')
+                    .replace(/(\d{3})(\d)/, '$1.$2')
+                    .replace(/(\d{3})(\d)/, '$1.$2')
+                    .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
             }
-            this.value = value;
-        });
-    
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            let valid = true;
-    
-            const inputs = form.querySelectorAll('input, select');
-            inputs.forEach(input => {
-                input.classList.remove('input-error', 'input-success');
+
+            function maskCEP(value) {
+                return value
+                    .replace(/\D/g, '')
+                    .replace(/(\d{5})(\d)/, '$1-$2');
+            }
+
+            function maskTelefone(value) {
+                return value
+                    .replace(/\D/g, '')
+                    .replace(/(\d{2})(\d)/, '($1)$2')
+                    .replace(/(\d{5})(\d)/, '$1-$2')
+                    .replace(/(-\d{4})\d+?$/, '$1');
+            }
+
+            function maskCartao(value) {
+                return value
+                    .replace(/\D/g, '')
+                    .replace(/(\d{4})(\d)/, '$1 $2')
+                    .replace(/(\d{4})(\d)/, '$1 $2')
+                    .replace(/(\d{4})(\d)/, '$1 $2')
+                    .replace(/(\d{4})(\d{1,4})$/, '$1 $2');
+            }
+
+            // Aplicar máscaras aos campos
+            const cpfInput = document.getElementById('cpf');
+            const cepInput = document.getElementById('cep');
+            const telefoneInput = document.getElementById('telefone');
+            const numeroCartaoInput = document.getElementById('numero-cartao');
+            const codigoSegurancaInput = document.getElementById('codigo-segurança');
+
+            cpfInput.addEventListener('input', function () {
+                this.value = maskCPF(this.value);
             });
-    
-            const nome = document.getElementById('nome');
-            if (nome.value.trim().length < 3) {
-                setError(nome);
-                valid = false;
-            } else {
-                setSuccess(nome);
+
+            cepInput.addEventListener('input', function () {
+                this.value = maskCEP(this.value);
+            });
+
+            telefoneInput.addEventListener('input', function () {
+                this.value = maskTelefone(this.value);
+            });
+
+            numeroCartaoInput.addEventListener('input', function () {
+                this.value = maskCartao(this.value);
+            });
+
+            codigoSegurancaInput.addEventListener('input', function () {
+                let value = this.value.replace(/\D/g, '');
+                if (value.length > 3) {
+                    value = value.substring(0, 3);
+                }
+                this.value = value;
+            });
+
+            // Validação do formulário
+            const form = document.getElementById('form');
+            
+            function setError(input) {
+                input.classList.remove('input-success');
+                input.classList.add('input-error');
             }
-    
-            if (!/^\(\d{2}\)\d{5}-\d{4}$/.test(telefoneInput.value.trim())) {
-                setError(telefoneInput);
-                valid = false;
-            } else {
-                setSuccess(telefoneInput);
+
+            function setSuccess(input) {
+                input.classList.remove('input-error');
+                input.classList.add('input-success');
             }
-    
-            const estado = document.getElementById('estado');
-            if (estado.value.trim().length < 2) {
-                setError(estado);
-                valid = false;
-            } else {
-                setSuccess(estado);
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                let valid = true;
+
+                const inputs = form.querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    input.classList.remove('input-error', 'input-success');
+                });
+
+                // Validação dos campos
+                const nome = document.getElementById('nome');
+                if (nome.value.trim().length < 3) {
+                    setError(nome);
+                    valid = false;
+                } else {
+                    setSuccess(nome);
+                }
+
+                if (!/^\(\d{2}\)\d{5}-\d{4}$/.test(telefoneInput.value.trim())) {
+                    setError(telefoneInput);
+                    valid = false;
+                } else {
+                    setSuccess(telefoneInput);
+                }
+
+                const estado = document.getElementById('estado');
+                if (estado.value.trim().length < 2) {
+                    setError(estado);
+                    valid = false;
+                } else {
+                    setSuccess(estado);
+                }
+
+                if (!/^\d{5}-\d{3}$/.test(cepInput.value.trim())) {
+                    setError(cepInput);
+                    valid = false;
+                } else {
+                    setSuccess(cepInput);
+                }
+
+                const endereco = document.getElementById('endereco');
+                if (endereco.value.trim() === "") {
+                    setError(endereco);
+                    valid = false;
+                } else {
+                    setSuccess(endereco);
+                }
+
+                const bairro = document.getElementById('bairro');
+                if (bairro.value.trim() === "") {
+                    setError(bairro);
+                    valid = false;
+                } else {
+                    setSuccess(bairro);
+                }
+
+                if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpfInput.value.trim())) {
+                    setError(cpfInput);
+                    valid = false;
+                } else {
+                    setSuccess(cpfInput);
+                }
+
+                if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(numeroCartaoInput.value.trim())) {
+                    setError(numeroCartaoInput);
+                    valid = false;
+                } else {
+                    setSuccess(numeroCartaoInput);
+                }
+
+                if (!/^\d{3}$/.test(codigoSegurancaInput.value.trim())) {
+                    setError(codigoSegurancaInput);
+                    valid = false;
+                } else {
+                    setSuccess(codigoSegurancaInput);
+                }
+
+                if (valid) {
+                    alert("Formulário enviado com sucesso!");
+                    // Aqui você pode adicionar o código para enviar o formulário
+                    // form.submit();
+                }
+            });
+
+            // Carregar itens do carrinho
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+            const lista = document.getElementById("lista-itens-pedido");
+            const totalItensSpan = document.getElementById("total-itens");
+            const subtotalSpan = document.getElementById("subtotal");
+
+            if (!lista) return;
+
+            lista.innerHTML = "";
+
+            if (carrinho.length === 0) {
+                lista.innerHTML = "<li>Seu carrinho está vazio.</li>";
+                totalItensSpan.textContent = "0";
+                subtotalSpan.textContent = "R$ 0,00";
+                return;
             }
-    
-            if (!/^\d{5}-\d{3}$/.test(cepInput.value.trim())) {
-                setError(cepInput);
-                valid = false;
-            } else {
-                setSuccess(cepInput);
-            }
-    
-            const endereco = document.getElementById('endereco');
-            if (endereco.value.trim() === "") {
-                setError(endereco);
-                valid = false;
-            } else {
-                setSuccess(endereco);
-            }
-    
-            const bairro = document.getElementById('bairro');
-            if (bairro.value.trim() === "") {
-                setError(bairro);
-                valid = false;
-            } else {
-                setSuccess(bairro);
-            }
-    
-            if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpfInput.value.trim())) {
-                setError(cpfInput);
-                valid = false;
-            } else {
-                setSuccess(cpfInput);
-            }
-    
-            if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(numeroCartaoInput.value.trim())) {
-                setError(numeroCartaoInput);
-                valid = false;
-            } else {
-                setSuccess(numeroCartaoInput);
-            }
-    
-            if (!/^\d{3}$/.test(codigoSegurancaInput.value.trim())) {
-                setError(codigoSegurancaInput);
-                valid = false;
-            } else {
-                setSuccess(codigoSegurancaInput);
-            }
-    
-            if (valid) {
-                alert("Formulário enviado com sucesso!");
-                form.submit();
-            }
+
+            let totalGeral = 0;
+            let totalItens = 0;
+
+            carrinho.forEach(item => {
+                const nome = item.nome || "Produto sem nome";
+                const quantidade = item.quantidade || 1;
+                const preco = parseFloat(item.precoDesconto || 0);
+                let imagem = item.imagem || "img/sem-imagem.jpg";
+
+                // Corrige o caminho da imagem
+                if (!imagem.startsWith("http") && !imagem.startsWith("../") && (imagem.includes("Img/") || imagem.includes("img/"))) {
+                    imagem = "../" + imagem;
+                }
+
+                const totalItem = preco * quantidade;
+                totalGeral += totalItem;
+                totalItens += quantidade;
+
+                const li = document.createElement("li");
+                li.className = "item-pedido";
+                li.innerHTML = `
+                    <img src="${imagem}" alt="${nome}">
+                    <div class="item-info">
+                        <div><strong>${quantidade}x</strong> ${nome}</div>
+                        <div>R$ ${totalItem.toFixed(2).replace('.', ',')}</div>
+                    </div>
+                `;
+                lista.appendChild(li);
+            });
+
+            // Atualiza totais
+            totalItensSpan.textContent = totalItens;
+            subtotalSpan.textContent = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
         });
-    });
     </script>
-
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    const lista = document.getElementById("lista-itens-pedido");
-
-    if (!lista) return;
-
-    lista.innerHTML = "";
-
-    if (carrinho.length === 0) {
-        lista.innerHTML = "<li>Seu carrinho está vazio.</li>";
-        return;
-    }
-
-    let totalGeral = 0;
-    let totalItens = 0;
-
-    carrinho.forEach(item => {
-        const nome = item.nome || "Produto sem nome";
-        const quantidade = item.quantidade || 1;
-        const preco = parseFloat(item.precoDesconto || 0);
-        let imagem = item.imagem || "img/sem-imagem.jpg";
-
-        // Corrige o caminho da imagem se estiver salvo como relativo ao carrinho ou raiz
-        if (!imagem.startsWith("http") && !imagem.startsWith("../") && (imagem.includes("Img/") || imagem.includes("img/"))) {
-            imagem = "../" + imagem;
-        }
-
-        const totalItem = preco * quantidade;
-        totalGeral += totalItem;
-        totalItens += quantidade;
-
-        const li = document.createElement("li");
-        li.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                <img src="${imagem}" alt="${nome}" style="width: 50px; height: 50px; object-fit: contain; border: 1px solid #ccc; border-radius: 4px;">
-                <div>
-                    <strong>${quantidade}x</strong> ${nome}<br>
-                    <span style="color:#333">R$ ${totalItem.toFixed(2).replace('.', ',')}</span>
-                </div>
-            </div>
-        `;
-        lista.appendChild(li);
-    });
-
-    const resumo = document.createElement("li");
-    resumo.innerHTML = `
-        <hr style="margin: 10px 0;">
-        <p><strong>Total de itens:</strong> ${totalItens}</p>
-        <p><strong>Subtotal:</strong> R$ ${totalGeral.toFixed(2).replace('.', ',')}</p>
-        <p><strong>Frete:</strong> Grátis</p>
-    `;
-    lista.appendChild(resumo);
-});
-</script>
 
 </body>
 </html>
